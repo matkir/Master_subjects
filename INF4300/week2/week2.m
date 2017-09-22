@@ -32,7 +32,7 @@ h = imhist(img_std);
 plot([0:255],h/sum(h),'linewidth',2);
 xlim([0 15])
 title('Normalized histogram of image after histeq');
-
+    
 % Define GLCM-parameters.
 windowSize = 31;
 dx = 0;

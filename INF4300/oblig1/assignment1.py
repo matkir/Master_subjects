@@ -97,10 +97,30 @@ plot_imglist(equalized_img,sub=True)
 """
 GLCM IMG
 """
+#image 0 as described in the report
 glcm_img=[]
-megapic=np.linspace(0,2*np.pi,50)
-for i in equalized_img:
-        glcm_img.append(GLCM(i, [6], megapic))
+glcm_img.append(GLCM(equalized_img[0], [6], [0]))
+
+#image 1 as described in the report
+glcm_img.append(GLCM(equalized_img[1], [6], [0]))
+
+#image 2 as described in the report
+glcm_img.append(GLCM(equalized_img[2], [6], [0]))
+
+#image 3 as described in the report
+glcm_img.append(GLCM(equalized_img[3], [6], [0]))
+
+#image 4 as described in the report
+glcm_img.append(GLCM(equalized_img[4], [6], [0]))
+
+#image 5 as described in the report
+glcm_img.append(GLCM(equalized_img[5], [6], [0]))
+
+#image 6 as described in the report
+glcm_img.append(GLCM(equalized_img[6], [6], [0]))
+
+#image 7 as described in the report
+glcm_img.append(GLCM(equalized_img[7], [6], [0]))
 
 def make_gif(img_number):
     for i in range(len(megapic)):

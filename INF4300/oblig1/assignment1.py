@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 import skimage.feature as skif
+import skimage as ski
 from matplotlib import animation
 #import seaborn
 plot1=False
@@ -11,7 +12,7 @@ plot2=False
 
 def GLCM(image,distances,angles):
     #calculates the grey level co-ocurtance matrix
-    return skif.greycomatrix(image, distances, angles, levels=None, symmetric=False, normed=False)
+    return skif.greycomatrix(image, distances, angles, levels=16, symmetric=False, normed=False)
 
 def plot_imglist(img,sub=False):
     if sub:
@@ -67,8 +68,6 @@ subimg12=img1[256:512 , 0:256 ]
 subimg13=img1[256:512 , 256:512 ]
 
 
-
-
 #from this point, every transformation will be in lists:
 """
 element in list is described under
@@ -84,6 +83,14 @@ element in list is described under
 
 original_img=[subimg00,subimg01,subimg02,subimg03,subimg10,subimg11,subimg12,subimg13,img0,img1]
 #original_img is now on the sape over
+for i in enumerate(original_img):
+    plt.imshow(i[1],cmap='gray')
+    a="%s"%(i[0])
+    plt.title(a,)
+    plt.savefig('report/%s.png'%(i[0]))
+    plt.clf()
+
+
 
 
 """
@@ -91,7 +98,11 @@ EQ IMG
 """
 equalized_img=[]
 for i in original_img:
-        equalized_img.append(cv2.equalizeHist(i))
+        equalized_img.append(ski.exposure.rescale_intensity(i, out_range=(0, 15)))
+        #equalized_img.append(cv2.equalizeHist(i))
+plt.imshow(ski.img_as_bool(equalized_img[1], force_copy=True))
+plt.show()
+
 plot_imglist(equalized_img,sub=True)
 
 """
@@ -122,11 +133,16 @@ glcm_img.append(GLCM(equalized_img[6], [6], [0]))
 #image 7 as described in the report
 glcm_img.append(GLCM(equalized_img[7], [6], [0]))
 
-def make_gif(img_number):
-    for i in range(len(megapic)):
-        plt.imshow(glcm_img[img_number][:,:,0,i])
-        a="%f"%(i/50*2*np.pi)
-        plt.title(a)
+
+
+
+def make_gif(image,num_points,length):
+    points=np.linspace(0,np.pi,num_points)
+    glcm_img=GLCM(image, [length], points)
+    for i in range(len(points)):
+        plt.imshow(glcm_img[:,:,0,i])
+        a="%f"%(i)
+        plt.title(a,)
         plt.savefig('img%.2d.png'%(i))
         plt.clf()
     import glob
@@ -139,4 +155,8 @@ def make_gif(img_number):
         for filename in filenames:
             image = imageio.imread(filename)
             writer.append_data(image)
-make_gif(4)
+    import glob, os
+    for f in glob.glob("img*.png"):
+        os.remove(f)    
+
+make_gif(equalized_img[2],20,10)

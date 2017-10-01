@@ -4,9 +4,11 @@ import matplotlib.pyplot as plt
 import skimage.feature as skif
 import skimage as ski
 from matplotlib import animation
+import sys
 #import seaborn
 plot1=False
 plot2=False
+
 
 
 
@@ -33,7 +35,7 @@ def plot_imglist(img,sub=False):
         plt.title('Img7'), plt.xticks([]), plt.yticks([])
         plt.subplot(224),plt.imshow(img[7],cmap = 'gray')
         plt.title('Img8'), plt.xticks([]), plt.yticks([])
-        plt.show()
+        plt.sh  ow()
     else:
         plt.subplot(121),plt.imshow(img[8],cmap = 'gray')
         plt.title('Img1'), plt.xticks([]), plt.yticks([])
@@ -90,7 +92,20 @@ for i in enumerate(original_img):
     plt.savefig('report/%s.png'%(i[0]))
     plt.clf()
 
+    plt.imshow(ski.feature.canny(i[1]),cmap='gray')
+    a="canny%s"%(i[0])
+    plt.title(a,)
+    plt.savefig('report/canny%s.png'%(i[0]))
+    plt.clf()
 
+    plt.hist(i[1].ravel(), bins=256, histtype='step', color='black') 
+    a="hist%s"%(i[0])
+    plt.title(a,)
+    plt.savefig('report/hist%s.png'%(i[0]))
+    plt.clf()
+  
+   
+sys.exit()
 
 
 """
@@ -100,10 +115,15 @@ equalized_img=[]
 for i in original_img:
         equalized_img.append(ski.exposure.rescale_intensity(i, out_range=(0, 15)))
         #equalized_img.append(cv2.equalizeHist(i))
-plt.imshow(ski.img_as_bool(equalized_img[1], force_copy=True))
-plt.show()
 
 plot_imglist(equalized_img,sub=True)
+
+
+
+
+###################
+######PART 2#######
+###################
 
 """
 GLCM IMG

@@ -10,6 +10,7 @@
 \usepackage{listings}
 \usepackage{color}
 \usepackage{gensymb}
+\usepackage{subfig}
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
@@ -60,53 +61,142 @@ First, when i describe the different textures, i will index the different images
 
 This means i will start in the top left corner of mosaic1 and and in the bottom right corner of mosaic2. In the program 8 and 9 is reserved for the whole mosaic1 and mosaic2 respectivly. 
 
+\newpage
+
 \subsection{Texture 0}
-\textbf{disc of texture}
-\textbf{disc of texture}
-\textbf{disc of texture}
-\textbf{disc of texture}
-\textbf{disc of texture}
-\textbf{disc of texture}
-\begin{figure}[h!]
-\includegraphics[scale=0.5]{0.png}
+\textbf{Caracteristics:}\\
+Textue is mainly random noise. Somewhere in the texture you get some patters that looks like holes. \\
+
+\textbf{Texture Direction}\\
+There are no prefered way the texture moves, although as mentioned, som sicular patterns can be observed.\\
+
+\textbf{Frequency} \\
+The crevasas is on a rough average 10px in diameter, and the edges beween them is closer to 4px.\\ 
+
+
+\textbf{Varience}\\
+If we look at the histogram, we can see that it is one of the textures with the least varience. We do have some peaks that drives down the varience a bit\\
+
+\textbf{Homogenity}\\
+The texture is has very few homogen areas.\\
+
+\textbf{Texture element size}\\
+As mentioned, alement size is hard to determine.
+
+\begin{figure}[h]%
+	\centering
+    \subfloat[IMG 0]{{\includegraphics[width=5.5cm]{0.png} }}%
+    \qquad
+    \subfloat[Hist IMG 0]{{\includegraphics[width=5.5cm]{hist0.png} }}%
+    \caption{Texture with histogram}%
+    \label{fig:IMG0}%
 \end{figure}
+
+
 
 \newpage
 \subsection{Texture 1}
-\textbf{disc of texture}
-\textbf{disc of texture}
-\textbf{disc of texture}
-\textbf{disc of texture}
-\textbf{disc of texture}
-\textbf{disc of texture}
-\begin{figure}[h!]
-\includegraphics[scale=0.5]{1.png}
+\textbf{Caracteristics:}\\
+Textue has a clearer pattern of squares that is roughly 8 px wide and high.
+It is also some radom noise on top of the texture. 
+\\
+
+\textbf{Texture Direction}\\
+The texture direction is almost horizontal (and verical), with a slight scewe.\\
+
+\textbf{Frequency} \\
+The frequency of the texture is equal to the length of the squares.
+\\ 
+
+
+\textbf{Varience}\\
+The istogram is fairly balanced, so the varience is in the middle if the spectrum. Especially compared to \ref{fig:IMG2} \\
+
+\textbf{Homogenity}\\
+The texture is has very few homogene areas.\\
+
+\textbf{Texture element size}\\
+As mentioned, the quares has a diameter of approximently 7 px.
+
+
+\begin{figure}[h]%
+	\centering
+    \subfloat[IMG 1]{{\includegraphics[width=5.5cm]{1.png} }}%
+    \qquad
+    \subfloat[Hist IMG 1]{{\includegraphics[width=5.5cm]{hist1.png} }}%
+    \caption{Texture with histogram}%
+    \label{fig:IMG1}%
 \end{figure}
 
-
+\newpage
 \subsection{Texture 2}
-\textbf{disc of texture}
-\textbf{disc of texture}
-\textbf{disc of texture}
-\textbf{disc of texture}
-\textbf{disc of texture}
-\textbf{disc of texture}
-\begin{figure}[h!]
-\includegraphics[scale=0.5]{2.png}
+\textbf{Caracteristics:}\\
+The texture is a series of lines that face in roughly the same direction.
+\\
+
+\textbf{Texture Direction}\\
+The mayority of the stripes has an angle of 100\textbf{deg}.
+\\ 
+ 
+\textbf{Frequency} \\
+The frequency of the pattern, diagonally to the lines is \textbf{X} pixels.
+\\ 
+
+
+\textbf{Varience}\\
+This pattern has a small varience, probably the smallest.
+\\
+
+\textbf{Homogenity}\\
+The texture is has very few homogene areas.\\
+
+\textbf{Texture element size}\\
+The element size is only a few pixels wide, and \textbf{X} pixels high.
+
+
+\begin{figure}[h]%
+	\centering
+    \subfloat[IMG 2]{{\includegraphics[width=5.5cm]{2.png} }}%
+    \qquad
+    \subfloat[Hist IMG 2]{{\includegraphics[width=5.5cm]{hist2.png} }}%
+    \caption{Texture with histogram}%
+    \label{fig:IMG2}%
 \end{figure}
+
 \newpage
 
 \subsection{Texture 3}
-\textbf{disc of texture}
-\textbf{disc of texture}
-\textbf{disc of texture}
-\textbf{disc of texture}
-\textbf{disc of texture}
-\textbf{disc of texture}
-\begin{figure}[h!]
-\includegraphics[scale=0.5]{3.png}
-\end{figure}
+\textbf{Caracteristics:}\\
+This seems like another white noice texture.\\
 
+\textbf{Texture Direction}\\
+There are no clear direction in the texture. This and the first one is isotropic textures.
+\\ 
+ 
+\textbf{Frequency} \\
+It is hard to say anyting about the frequency, but a rough guess might be 2-3px\\ 
+
+
+\textbf{Varience}\\
+This pattern has a low variance, but the pixel value ~75 upping the variance.
+\\
+
+\textbf{Homogenity}\\
+The texture is has very few homogene areas.\\
+
+\textbf{Texture element size}\\
+The element size is only a few pixels wide, and \textbf{X} pixels high.
+
+
+\begin{figure}[h]%
+	\centering
+    \subfloat[IMG 3]{{\includegraphics[width=5.5cm]{3.png} }}%
+    \qquad
+    \subfloat[Hist IMG 3]{{\includegraphics[width=5.5cm]{hist3.png} }}%
+    \caption{Texture with histogram}%
+    \label{fig:IMG3}%
+\end{figure}
+\newpage
 
 \subsection{Texture 4}
 \textbf{disc of texture}
@@ -131,6 +221,31 @@ This means i will start in the top left corner of mosaic1 and and in the bottom 
 \includegraphics[scale=0.5]{5.png}
 \end{figure}
 
+\subsection{Texture 6}
+\textbf{disc of texture}
+\textbf{disc of texture}
+\textbf{disc of texture}
+\textbf{disc of texture}
+\textbf{disc of texture}
+\textbf{disc of texture}
+\begin{figure}[h!]
+\includegraphics[scale=0.5]{6.png}
+\end{figure}
+
+\newpage
+
+\subsection{Texture 7}
+\textbf{disc of texture}
+\textbf{disc of texture}
+\textbf{disc of texture}
+\textbf{disc of texture}
+\textbf{disc of texture}
+\textbf{disc of texture}
+\begin{figure}[h!]
+\includegraphics[scale=0.5]{7.png}
+\end{figure}
+
+\section{2}
 
 
 

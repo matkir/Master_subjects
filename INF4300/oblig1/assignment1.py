@@ -6,45 +6,15 @@ import skimage as ski
 from matplotlib import animation
 import sys
 from numpy import pi
+from numba import jit
+from funcs import *
 #import seaborn
 plot1=False
 plot2=False
 
 
 
-
-def GLCM(image,distances,angles,levels1=16, symmetric1=False, normed1=False):
-    #calculates the grey level co-ocurtance matrix
-    return skif.greycomatrix(image, distances, angles, levels=levels1, symmetric=symmetric1, normed=normed1)
-
-def plot_imglist(img,sub=False):
-    if sub:
-        plt.subplot(221),plt.imshow(img[0],cmap = 'gray')
-        plt.title('Img1'), plt.xticks([]), plt.yticks([])
-        plt.subplot(222),plt.imshow(img[1],cmap = 'gray')
-        plt.title('Img2'), plt.xticks([]), plt.yticks([])
-        plt.subplot(223),plt.imshow(img[2],cmap = 'gray')
-        plt.title('Img3'), plt.xticks([]), plt.yticks([])
-        plt.subplot(224),plt.imshow(img[3],cmap = 'gray')
-        plt.title('Img4'), plt.xticks([]), plt.yticks([])
-        plt.show()
-        plt.subplot(221),plt.imshow(img[4],cmap = 'gray')
-        plt.title('Img5'), plt.xticks([]), plt.yticks([])
-        plt.subplot(222),plt.imshow(img[5],cmap = 'gray')
-        plt.title('Img6'), plt.xticks([]), plt.yticks([])
-        plt.subplot(223),plt.imshow(img[6],cmap = 'gray')
-        plt.title('Img7'), plt.xticks([]), plt.yticks([])
-        plt.subplot(224),plt.imshow(img[7],cmap = 'gray')
-        plt.title('Img8'), plt.xticks([]), plt.yticks([])
-        plt.show()
-    else:
-        plt.subplot(121),plt.imshow(img[8],cmap = 'gray')
-        plt.title('Img1'), plt.xticks([]), plt.yticks([])
-        plt.subplot(122),plt.imshow(img[9],cmap = 'gray')
-        plt.title('Img2'), plt.xticks([]), plt.yticks([])
-        plt.show()
-
-        
+ 
 
 img0 = cv2.imread('mosaic1.png',0)
 img1 = cv2.imread('mosaic2.png',0)
@@ -288,27 +258,48 @@ def oppg2():
     plt.clf()
     
 
+
 ###################
-######PART 2#######
+######PART 3#######
 ###################
 
+#@jit
+def homogenity(p):
+    rows,cols=p.shape
+    a=np.fromfunction(lambda x, y: 1/(1+(x-y)**2) , (rows, cols), dtype=float)
+    return np.sum(np.multiply(a,p))
+    
 
-def homogenity(x,y,p):
-    tmp=0
-    for k in p[:,:,0,0]:
-        tmp+=1/(1+(x-y)**2)*p
-    return tmp 
-def inertia(x,y,p):
-    return ((x-y)**2)*p
-def cluster_shade(x,y,ux,uy,p):
-    return (x+y-ux-ux)**3*p
+def inertia(p):
+    rows,cols=p.shape
+    a=np.fromfunction(lambda x, y:(x-y)**2 , (rows, cols), dtype=float)
+    return np.sum(np.multiply(a,p))
+   
+def cluster_shade(p):
+    rows,cols=p.shape
+    
+    def u_x(i):
+        return np.fromfunction(lambda  j : j*i*p[i,j] , (rows), dtype=float)
+    
+    def u_y(j):
+        return np.fromfunction(lambda  i : j*i*p[i,j] , (cols), dtype=float)
+    
+    a=np.fromfunction(lambda x, y:x+y , (rows, cols), dtype=float)
+    b=np.fromfunction(u_x(rows) , (rows, cols), dtype=float)
+    c=np.fromfunction(u_y(cols) , (rows, cols), dtype=float)
+    d=np.add(a, b)
+    d=np.add(d,c)
+    d=d**3
+    return np.sum(np.multiply(d,p))
+    
+
 
 
 def sliding_window(inarray,size,f):
     equalized0=cv2.equalizeHist(inarray)
     inarray_16=(ski.exposure.rescale_intensity(equalized0, out_range=(0, 15)))
     s=int((size-1)/2)
-    retarray=np.copy(inarray)
+    newarray=np.zeros(inarray.shape)
     A,B=np.shape(inarray)
     
     for i in enumerate(inarray):
@@ -319,40 +310,21 @@ def sliding_window(inarray,size,f):
                 continue
             
             
-           
-            p=GLCM(inarray_16[i[0]-s:i[0]+s,j[0]-s:j[0]+s], [1], [0], symmetric1=True, normed1=True)
-            tmp=0
-            tmp+= f(x, y, p)
-                
-            retarray[i[0]][j[0]]=tmp
+            w=[i[0]-s,i[0]+s,j[0]-s,j[0]+s]
+            p=GLCM(inarray_16[w[0]:w[1],w[2]:w[3]], [3], [pi], symmetric1=True, normed1=True)
+            p=p[:,:,0,0] #gets only the first gclm
+            plass=f(p)
+            newarray[i[0]][j[0]]=plass
     
-    return retarray    
-    
-a=sliding_window(original_img[0],5,homogenity)
+    return newarray[0+s+1:A-s,0+s+1:B-s]    
+
+
+import time
+start_time = time.time()
+a=sliding_window(original_img[-2],10,cluster_shade)
+print("--- %s seconds ---" % (time.time() - start_time))
 plt.imshow(a)
 plt.show()
 
-def make_gif(image,num_points,length):
-    points=np.linspace(0,np.pi,num_points)
-    glcm_img=GLCM(image, [length], points)
-    for i in range(len(points)):
-        plt.imshow(glcm_img[:,:,0,i])
-        a="%f"%(i)
-        plt.title(a,)
-        plt.savefig('img%.2d.png'%(i))
-        plt.clf()
-    import glob
-    filenames=glob.glob('img*')
-    f=sorted(filenames)
-    g=f[:-2]
-    filenames=g
-    import imageio
-    with imageio.get_writer('movie.gif', mode='I') as writer:
-        for filename in filenames:
-            image = imageio.imread(filename)
-            writer.append_data(image)
-    import glob, os
-    for f in glob.glob("img*.png"):
-        os.remove(f)    
 
 #make_gif(equalized_img[2],20,10)

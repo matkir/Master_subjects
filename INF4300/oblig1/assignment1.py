@@ -18,6 +18,7 @@ plot2=False
 
 img0 = cv2.imread('mosaic1.png',0)
 img1 = cv2.imread('mosaic2.png',0)
+#img1 = cv2.imread('zebra_3.tif',0)
 img0shape=img0.shape
 img1shape=img1.shape
 
@@ -266,34 +267,61 @@ def oppg2():
 #@jit
 def homogenity(p):
     rows,cols=p.shape
-    a=np.fromfunction(lambda x, y: 1/(1+(x-y)**2) , (rows, cols), dtype=float)
+    a=np.fromfunction(lambda x, y: 1/(1+(x-y)**2) , (rows, cols), dtype=int)
     return np.sum(np.multiply(a,p))
     
+def energy(p):
+    p=np.power(p, 2)
+    return np.sum(p)
 
 def inertia(p):
     rows,cols=p.shape
-    a=np.fromfunction(lambda x, y:(x-y)**2 , (rows, cols), dtype=float)
+    a=np.fromfunction(lambda x, y:(x-y)**2 , (rows, cols), dtype=int)
     return np.sum(np.multiply(a,p))
    
 def cluster_shade(p):
     rows,cols=p.shape
     
-    def u_x(i):
-        return np.fromfunction(lambda  j : j*i*p[i,j] , (rows), dtype=float)
+    def u_x(rows,cols,p):
+        
+        return np.fromfunction(lambda  i,j : i*np.sum(p[i,:]) , (rows,1), dtype=int)
     
-    def u_y(j):
-        return np.fromfunction(lambda  i : j*i*p[i,j] , (cols), dtype=float)
+    def u_y(rows,cols,p):
+        return np.fromfunction(lambda  j,i : j*np.sum(p[:,j]) , (cols,1), dtype=int)
     
-    a=np.fromfunction(lambda x, y:x+y , (rows, cols), dtype=float)
-    b=np.fromfunction(u_x(rows) , (rows, cols), dtype=float)
-    c=np.fromfunction(u_y(cols) , (rows, cols), dtype=float)
+    a=np.fromfunction(lambda x, y:x+y , (rows, cols), dtype=int)
+    b=u_x(rows,cols,p)
+    c=u_y(rows,cols,p)
     d=np.add(a, b)
     d=np.add(d,c)
-    d=d**3
+    d=np.power(d, 3)
     return np.sum(np.multiply(d,p))
     
 
-
+def get_coords(size,length,x,inarray):
+    s=int((size-1)/2)
+    arr=[]
+    for i in range(s,length-size):
+        tmp=inarray[i-s:i+s,x-s:x+s]
+        arr.append(tmp.tolist())
+    return arr
+"""    
+def sliding_window_v(inarray,size,f):
+    equalized0=cv2.equalizeHist(inarray)
+    inarray_16=(ski.exposure.rescale_intensity(equalized0, out_range=(0, 15)))
+    s=int((size-1)/2)
+    A,B=np.shape(inarray)
+    newarray=np.zeros(inarray.shape)
+    
+    for i in range(A):
+        if i+s >= A or i-s <= 0:
+            continue
+        pntlist=get_coords(size, B, i, inarray_16)
+        for j in enumerate(pntlist):
+            tmp=GLCM(j[1],[3],[0],symmetric1=True, normed1=True) 
+            newarray[i][j[0]]=f(tmp[:,:,0,0])
+    return newarray[0+s+1:A-s,0+s+1:B-s]    
+"""    
 
 def sliding_window(inarray,size,f):
     equalized0=cv2.equalizeHist(inarray)
@@ -311,19 +339,20 @@ def sliding_window(inarray,size,f):
             
             
             w=[i[0]-s,i[0]+s,j[0]-s,j[0]+s]
-            p=GLCM(inarray_16[w[0]:w[1],w[2]:w[3]], [3], [pi], symmetric1=True, normed1=True)
+            p=GLCM(inarray_16[w[0]:w[1],w[2]:w[3]], [3], [0], symmetric1=True, normed1=True)
             p=p[:,:,0,0] #gets only the first gclm
-            plass=f(p)
-            newarray[i[0]][j[0]]=plass
+            newarray[i[0]][j[0]]=f(p)
     
     return newarray[0+s+1:A-s,0+s+1:B-s]    
 
 
 import time
+
 start_time = time.time()
-a=sliding_window(original_img[-2],10,cluster_shade)
+b=sliding_window(original_img[-1],5,energy)
 print("--- %s seconds ---" % (time.time() - start_time))
-plt.imshow(a)
+
+plt.imshow(b)
 plt.show()
 
 

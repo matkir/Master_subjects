@@ -1,0 +1,2 @@
+equalized_hist=cv2.equalizeHist(original_img)
+equalized_rescaled_hist=(ski.exposure.rescale_intensity(equalized_hist, out_range=(0, 15)))

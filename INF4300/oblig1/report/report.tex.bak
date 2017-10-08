@@ -445,15 +445,7 @@ At the end we get the Original picture histeq-ed with 16 grey-levels.
 \subsection{The GLCM Results}
 	\setcounter{subsubsection}{-1}	
 	\subsubsection{Texture 0}
-		\begin{figure}[h]%
-			\centering
-    		\subfloat[Old Histogram]{{\includegraphics[width=5.5cm]{hist0.png} }}%
-    		\qquad
-    		\subfloat[New Histogram]{{\includegraphics[width=5.5cm]{histexample.png} }}%
-    		\caption{Transformation of the histogram (just an example, not actual transformation)}%
-    		\label{fig:Transform}%
-		\end{figure}
-
+	
 	\subsubsection{Texture 1}
 	\subsubsection{Texture 2}
 	\subsubsection{Texture 3}

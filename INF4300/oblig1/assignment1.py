@@ -98,9 +98,9 @@ def oppg2():
     #image 0 as described in the report
     equalized0=cv2.equalizeHist(original_img[0])
     equalized0=(ski.exposure.rescale_intensity(equalized0, out_range=(0, 15)))
-    
+
     #as mentioned, the holes are ~7px and the angle is 3pi/4
-    glcm_img.append(GLCM(equalized0, [9], [2.8*pi/4,3.2*pi/4],normed1=False))
+    glcm_img.append(GLCM(equalized0, [4], [2.8*pi/4,3.2*pi/4],normed1=False))
     
     plt.title("GLCM at 2.8*pi/4 and 3.2pi/4 rads")
     plt.subplot(121)
@@ -285,6 +285,8 @@ def oppg4():
     plt.show()
     
     
-    
-inertia_img,homogenity_img,cluster_shade_img=oppg3()   
-oppg4()
+
+oppg2()
+
+#inertia_img,homogenity_img,cluster_shade_img=oppg3()   
+#oppg4()

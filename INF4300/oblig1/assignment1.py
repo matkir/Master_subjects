@@ -98,156 +98,240 @@ def oppg2():
     #image 0 as described in the report
     equalized0=cv2.equalizeHist(original_img[0])
     equalized0=(ski.exposure.rescale_intensity(equalized0, out_range=(0, 15)))
-
-    #as mentioned, the holes are ~7px and the angle is 3pi/4
-    glcm_img.append(GLCM(equalized0, [4], [2.8*pi/4,3.2*pi/4],normed1=False))
+    #from the report, we have the angle=3pi/4 and len=4
+    #using a small delta on each side 
+    ang=[2.8*pi/4,3*pi/4,3.2*pi/4]
+    glcm_img.append(GLCM(equalized0, [4], ang ,normed1=True,symmetric1=True))
     
-    plt.title("GLCM at 2.8*pi/4 and 3.2pi/4 rads")
-    plt.subplot(121)
+    plt.title("GLCM at 2.8*pi/4 rads")
     plt.imshow(glcm_img[0][:,:,0,0])
     plt.colorbar()
-    plt.subplot(122)
+    plt.savefig("report/GCLM_IMG_0_0.jpg")
+    plt.clf()
+    plt.title("GLCM at 3*pi/4 rads")
     plt.imshow(glcm_img[0][:,:,0,1])
     plt.colorbar()
-    plt.savefig("report/GCLM_IMG0.jpg")
+    plt.savefig("report/GCLM_IMG_0_1.jpg")
     plt.clf()
-    
-    
-    
+    plt.title("GLCM at 3.2*pi/4 rads")
+    plt.imshow(glcm_img[0][:,:,0,2])
+    plt.colorbar()
+    plt.savefig("report/GCLM_IMG_0_2.jpg")
+    plt.clf()
+   
+  
+   
     #image 1 as described in the report
     equalized1=cv2.equalizeHist(original_img[1])
-    equalized1=(ski.exposure.rescale_intensity(equalized1, out_range=(0, 15)))
+    equalized1=(ski.exposure.rescale_intensity(equalized0, out_range=(0, 15)))
+    #from the report, we have the angle=3pi/4 and len=4
+    #using a small delta on each side 
+    ang=[0,pi,1.1*pi]
+    glcm_img.append(GLCM(equalized0, [4], ang ,normed1=True,symmetric1=True))
     
-    glcm_img.append(GLCM(equalized1, [7], [0,pi/3],normed1=False))
-    
-    plt.title("GLCM at 0 and pi/2 rads")
-    plt.subplot(121)
+    plt.title("GLCM at 0 rads")
     plt.imshow(glcm_img[1][:,:,0,0])
     plt.colorbar()
-    plt.subplot(122)
+    plt.savefig("report/GCLM_IMG_1_0.jpg")
+    plt.clf()
+    plt.title("GLCM at pi rads")
     plt.imshow(glcm_img[1][:,:,0,1])
     plt.colorbar()
-    plt.savefig("report/GCLM_IMG1.jpg")
+    plt.savefig("report/GCLM_IMG_1_1.jpg")
     plt.clf()
-    
-    
-    
-    
-    
+    plt.title("GLCM at 1.1*pi rads")
+    plt.imshow(glcm_img[1][:,:,0,2])
+    plt.colorbar()
+    plt.savefig("report/GCLM_IMG_1_2.jpg")
+    plt.clf()
+   
+   
+   
     
     #image 2 as described in the report
-    equalized2=cv2.equalizeHist(original_img[2])
-    equalized2=(ski.exposure.rescale_intensity(equalized2, out_range=(0, 15)))
+    equalized1=cv2.equalizeHist(original_img[2])
+    equalized1=(ski.exposure.rescale_intensity(equalized0, out_range=(0, 15)))
+    #from the report, we have the angle=3pi/4 and len=4
+    #using a small delta on each side 
+    ang=[1.6,1.745,1.8]
+    glcm_img.append(GLCM(equalized0, [4], ang ,normed1=True,symmetric1=True))
     
-    glcm_img.append(GLCM(equalized2, [20], [3.59,1.919],normed1=False))
-    
-    plt.title("GLCM at 0 and 1.2pi/2 rads")
-    plt.subplot(121)
+    plt.title("GLCM at 1.6 rads")
     plt.imshow(glcm_img[2][:,:,0,0])
     plt.colorbar()
-    plt.subplot(122)
+    plt.savefig("report/GCLM_IMG_2_0.jpg")
+    plt.clf()
+    plt.title("GLCM at 1.745 rads")
     plt.imshow(glcm_img[2][:,:,0,1])
     plt.colorbar()
-    plt.savefig("report/GCLM_IMG2.jpg")
+    plt.savefig("report/GCLM_IMG_2_1.jpg")
+    plt.clf()
+    plt.title("GLCM at 1.8 rads")
+    plt.imshow(glcm_img[2][:,:,0,2])
+    plt.colorbar()
+    plt.savefig("report/GCLM_IMG_2_2.jpg")
+    plt.clf()
+  
+    
+    
+    #image 3 as described in the report
+    equalized1=cv2.equalizeHist(original_img[3])
+    equalized1=(ski.exposure.rescale_intensity(equalized0, out_range=(0, 15)))
+    #from the report, we have the angle=3pi/4 and len=4
+    #using a small delta on each side 
+    ang=np.linspace(0,2*pi,4)
+    length=[2,4,8]
+    glcm_img.append(GLCM(equalized0, length, ang ,normed1=True,symmetric1=True))
+    
+    plt.title("Isometric GLCM with len 2")
+    iso=0
+    for i in range(len(ang)):
+        iso=np.add(glcm_img[3][:,:,0,i], iso)
+    
+    plt.imshow(np.divide(iso,len(ang)))
+    plt.colorbar()
+    plt.savefig("report/GCLM_IMG_3_0.jpg")
     plt.clf()
     
+    plt.title("Isometric GLCM with len 4")
+    iso=0
+    for i in range(len(ang)):
+        iso=np.add(glcm_img[3][:,:,1,i], iso)
     
-    
-    
-    
-    
-    
-    #image 2 as described in the report
-    equalized3=cv2.equalizeHist(original_img[3])
-    equalized3=(ski.exposure.rescale_intensity(equalized3, out_range=(0, 15)))
-    
-    glcm_img.append(GLCM(equalized3, [20], [3.59,1.919],normed1=False))
-    
-    plt.subplot(121)
-    plt.imshow(glcm_img[3][:,:,0,0])
+    plt.imshow(np.divide(iso,len(ang)))
     plt.colorbar()
-    plt.title("GLCM at 0 and 1.2pi/2 rads")
-    plt.subplot(122)
-    plt.imshow(glcm_img[3][:,:,0,1])
-    plt.colorbar()
-    plt.title("GLCM at 0 and 1.2pi/2 rads")
-    plt.savefig("report/GCLM_IMG3.jpg")
+    plt.savefig("report/GCLM_IMG_3_1.jpg")
     plt.clf()
     
+    plt.title("Isometric GLCM with len 4")
+    iso=0
+    for i in range(len(ang)):
+        iso=np.add(glcm_img[3][:,:,3,i], iso)
     
+    plt.imshow(np.divide(iso,len(ang)))
+    plt.colorbar()
+    plt.savefig("report/GCLM_IMG_3_2.jpg")
+    plt.clf()
+   
     
+     
     
-    #image 2 as described in the report
-    equalized4=cv2.equalizeHist(original_img[4])
-    equalized4=(ski.exposure.rescale_intensity(equalized4, out_range=(0, 15)))
+    #image 4 as described in the report
+    equalized1=cv2.equalizeHist(original_img[4])
+    equalized1=(ski.exposure.rescale_intensity(equalized0, out_range=(0, 15)))
+    #from the report, we have the angle=3pi/4 and len=4
+    #using a small delta on each side 
+    ang=[3*pi/4,pi/4,3.1*pi/4]
+    glcm_img.append(GLCM(equalized0, [4], ang ,normed1=True,symmetric1=True))
     
-    glcm_img.append(GLCM(equalized4, [20], [3.59,1.919],normed1=False))
-    
-    plt.subplot(121)
+    plt.title("GLCM at 3pi/4 rads")
     plt.imshow(glcm_img[4][:,:,0,0])
     plt.colorbar()
-    plt.title("GLCM at 0 and 1.2pi/2 rads")
-    plt.subplot(122)
+    plt.savefig("report/GCLM_IMG_4_0.jpg")
+    plt.clf()
+    plt.title("GLCM at pi/4 rads")
     plt.imshow(glcm_img[4][:,:,0,1])
     plt.colorbar()
-    plt.title("GLCM at 0 and 1.2pi/2 rads")
-    plt.savefig("report/GCLM_IMG4.jpg")
+    plt.savefig("report/GCLM_IMG_4_1.jpg")
     plt.clf()
+    plt.title("GLCM at 3.1pi/4 rads")
+    plt.imshow(glcm_img[4][:,:,0,2])
+    plt.colorbar()
+    plt.savefig("report/GCLM_IMG_4_2.jpg")
+    plt.clf()
+  
+      
     
+    #image 5 as described in the report
+    equalized1=cv2.equalizeHist(original_img[5])
+    equalized1=(ski.exposure.rescale_intensity(equalized0, out_range=(0, 15)))
+    #from the report, we have the angle=3pi/4 and len=4
+    #using a small delta on each side 
+    ang=[0,pi]
+    glcm_img.append(GLCM(equalized0, [4,12], ang ,normed1=True,symmetric1=True))
     
-    #image 2 as described in the report
-    equalized5=cv2.equalizeHist(original_img[5])
-    equalized5=(ski.exposure.rescale_intensity(equalized5, out_range=(0, 15)))
-    
-    glcm_img.append(GLCM(equalized5, [20], [3.59,1.919],normed1=False))
-    
-    plt.subplot(121)
+    plt.title("GLCM at 0 rads and len 4")
     plt.imshow(glcm_img[5][:,:,0,0])
     plt.colorbar()
-    plt.title("GLCM at 0 and 1.2pi/2 rads")
-    plt.subplot(122)
-    plt.imshow(glcm_img[5][:,:,0,1])
-    plt.colorbar()
-    plt.title("GLCM at 0 and 1.2pi/2 rads")
-    plt.savefig("report/GCLM_IMG5.jpg")
+    plt.savefig("report/GCLM_IMG_5_0.jpg")
     plt.clf()
+    plt.title("GLCM at pi rads and len 12")
+    plt.imshow(glcm_img[5][:,:,1,1])
+    plt.colorbar()
+    plt.savefig("report/GCLM_IMG_5_1.jpg")
+    plt.clf()
+    plt.title("GLCM at pi rads and len 4")
+    plt.imshow(glcm_img[5][:,:,1,1])
+    plt.colorbar()
+    plt.savefig("report/GCLM_IMG_5_2.jpg")
+    plt.clf()
+  
+
     
+    #image 6 as described in the report
+    equalized1=cv2.equalizeHist(original_img[6])
+    equalized1=(ski.exposure.rescale_intensity(equalized0, out_range=(0, 15)))
+    #from the report, we have the angle=3pi/4 and len=4
+    #using a small delta on each side 
+    ang=[pi]
+    glcm_img.append(GLCM(equalized0, [4,8,12], ang ,normed1=True,symmetric1=True))
     
-    #image 2 as described in the report
-    equalized6=cv2.equalizeHist(original_img[6])
-    equalized6=(ski.exposure.rescale_intensity(equalized6, out_range=(0, 15)))
-    
-    glcm_img.append(GLCM(equalized6, [20], [3.59,1.919],normed1=False))
-    
-    plt.subplot(121)
+    plt.title("GLCM at pi rads and len 4")
     plt.imshow(glcm_img[6][:,:,0,0])
     plt.colorbar()
-    plt.title("GLCM at 0 and 1.2pi/2 rads")
-    plt.subplot(122)
-    plt.imshow(glcm_img[6][:,:,0,1])
+    plt.savefig("report/GCLM_IMG_6_0.jpg")
+    plt.clf()
+    plt.title("GLCM at pi rads and len 8")
+    plt.imshow(glcm_img[6][:,:,1,0])
     plt.colorbar()
-    plt.title("GLCM at 0 and 1.2pi/2 rads")
-    plt.savefig("report/GCLM_IMG6.jpg")
+    plt.savefig("report/GCLM_IMG_6_1.jpg")
+    plt.clf()
+    plt.title("GLCM at pi rads and len 12")
+    plt.imshow(glcm_img[6][:,:,2,0])
+    plt.colorbar()
+    plt.savefig("report/GCLM_IMG_6_2.jpg")
+    plt.clf()
+  
+       
+    #image 7 as described in the report
+    equalized1=cv2.equalizeHist(original_img[7])
+    equalized1=(ski.exposure.rescale_intensity(equalized0, out_range=(0, 15)))
+    #from the report, we have the angle=3pi/4 and len=4
+    #using a small delta on each side 
+    ang=np.linspace(0,2*pi,4)
+    length=[3,6,9]
+    glcm_img.append(GLCM(equalized0, length, ang ,normed1=True,symmetric1=True))
+    
+    plt.title("Isometric GLCM with len 3")
+    iso=0
+    for i in range(len(ang)):
+        iso=np.add(glcm_img[7][:,:,0,i], iso)
+    
+    plt.imshow(np.divide(iso,len(ang)))
+    plt.colorbar()
+    plt.savefig("report/GCLM_IMG_7_0.jpg")
     plt.clf()
     
+    plt.title("Isometric GLCM with len 6")
+    iso=0
+    for i in range(len(ang)):
+        iso=np.add(glcm_img[7][:,:,1,i], iso)
     
-    #image 2 as described in the report
-    equalized7=cv2.equalizeHist(original_img[7])
-    equalized7=(ski.exposure.rescale_intensity(equalized7, out_range=(0, 15)))
-    
-    glcm_img.append(GLCM(equalized7, [20], [3.59,1.919],normed1=False))
-    
-    plt.subplot(121)
-    plt.imshow(glcm_img[7][:,:,0,0])
+    plt.imshow(np.divide(iso,len(ang)))
     plt.colorbar()
-    plt.title("GLCM at 0 and 1.2pi/2 rads")
-    plt.subplot(122)
-    plt.imshow(glcm_img[7][:,:,0,1])
-    plt.colorbar()
-    plt.title("GLCM at 0 and 1.2pi/2 rads")
-    plt.savefig("report/GCLM_IMG7.jpg")
+    plt.savefig("report/GCLM_IMG_7_1.jpg")
     plt.clf()
     
+    plt.title("Isometric GLCM with len 9")
+    iso=0
+    for i in range(len(ang)):
+        iso=np.add(glcm_img[3][:,:,3,i], iso)
+    
+    plt.imshow(np.divide(iso,len(ang)))
+    plt.colorbar()
+    plt.savefig("report/GCLM_IMG_7_2.jpg")
+    plt.clf()
+   
 
 
 ###################

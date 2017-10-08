@@ -432,7 +432,7 @@ At the end we get the Original picture histeq-ed with 16 grey-levels.
 	\subsubsection{Texture 2}
 		As we remember from \ref{fig:IMG2} we should use the angle $1.745$ rad and the dist 8 px. (length can vary on this one)\\
 	\subsubsection{Texture 3}
-		As we remember from \ref{fig:IMG3} it was isotropic , so we use dist 2px. (isotropic is here just the average of linspace(0,$2\pi$,8))\\
+		As we remember from \ref{fig:IMG3} it was isotropic , so we use dist 2px. (isotropic is here just the average of linspace(0,$2\pi$,4))\\
 	\subsubsection{Texture 4}
 		As we remember from \ref{fig:IMG4} we should use the angle $\frac{3\pi}{4}$ and the angle $\frac{\pi}{4}$ the dist 7px.\\
 	\subsubsection{Texture 5}
@@ -440,12 +440,20 @@ At the end we get the Original picture histeq-ed with 16 grey-levels.
 	\subsubsection{Texture 6}
 		As we remember from \ref{fig:IMG6} we should use the angle $\pi$ and the dist 8px (here we can use any length, preferably something that is not in the frequency of the horizontal component)\\
 	\subsubsection{Texture 7}
-		As we remember from \ref{fig:IMG7} it was isotropic , so we use dist 3px. (isotropic is here just the average of linspace(0,$2\pi$,8))\\
+		As we remember from \ref{fig:IMG7} it was isotropic , so we use dist 3px. (isotropic is here just the average of linspace(0,$2\pi$,4))\\
 
 \subsection{The GLCM Results}
 	\setcounter{subsubsection}{-1}	
 	\subsubsection{Texture 0}
-	
+		\begin{figure}[h]%
+			\centering
+    		\subfloat[Old Histogram]{{\includegraphics[width=5.5cm]{hist0.png} }}%
+    		\qquad
+    		\subfloat[New Histogram]{{\includegraphics[width=5.5cm]{histexample.png} }}%
+    		\caption{Transformation of the histogram (just an example, not actual transformation)}%
+    		\label{fig:Transform}%
+		\end{figure}
+
 	\subsubsection{Texture 1}
 	\subsubsection{Texture 2}
 	\subsubsection{Texture 3}

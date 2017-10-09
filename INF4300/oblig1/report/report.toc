@@ -20,10 +20,19 @@
 \contentsline {subsubsection}{\numberline {2.1.7}Texture 7}{14}{subsubsection.2.1.7}
 \contentsline {subsection}{\numberline {2.2}The GLCM Results}{15}{subsection.2.2}
 \contentsline {subsubsection}{\numberline {2.2.0}Texture 0}{15}{subsubsection.2.2.0}
-\contentsline {subsubsection}{\numberline {2.2.1}Texture 1}{15}{subsubsection.2.2.1}
-\contentsline {subsubsection}{\numberline {2.2.2}Texture 2}{15}{subsubsection.2.2.2}
-\contentsline {subsubsection}{\numberline {2.2.3}Texture 3}{15}{subsubsection.2.2.3}
-\contentsline {subsubsection}{\numberline {2.2.4}Texture 4}{15}{subsubsection.2.2.4}
-\contentsline {subsubsection}{\numberline {2.2.5}Texture 5}{15}{subsubsection.2.2.5}
-\contentsline {subsubsection}{\numberline {2.2.6}Texture 6}{15}{subsubsection.2.2.6}
-\contentsline {subsubsection}{\numberline {2.2.7}Texture 7}{15}{subsubsection.2.2.7}
+\contentsline {subsubsection}{\numberline {2.2.1}Texture 1}{16}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Texture 2}{17}{subsubsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.3}Texture 3}{18}{subsubsection.2.2.3}
+\contentsline {subsubsection}{\numberline {2.2.4}Texture 4}{19}{subsubsection.2.2.4}
+\contentsline {subsubsection}{\numberline {2.2.5}Texture 5}{20}{subsubsection.2.2.5}
+\contentsline {subsubsection}{\numberline {2.2.6}Texture 6}{21}{subsubsection.2.2.6}
+\contentsline {subsubsection}{\numberline {2.2.7}Texture 7}{22}{subsubsection.2.2.7}
+\contentsline {section}{\numberline {3}Computing features}{22}{section.3}
+\contentsline {subsection}{\numberline {3.1}Computing features result}{23}{subsection.3.1}
+\contentsline {section}{\numberline {4}The GLCM Global thresholding}{24}{section.4}
+\contentsline {subsection}{\numberline {4.1}Inertia}{24}{subsection.4.1}
+\contentsline {section}{\numberline {5}Homogeneity}{25}{section.5}
+\contentsline {subsection}{\numberline {5.1}Cluster shade}{26}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Comment on thresholding}{27}{subsection.5.2}
+\contentsline {section}{\numberline {6}Appendix A}{27}{section.6}
+\contentsline {section}{\numberline {7}Appendix B}{35}{section.7}

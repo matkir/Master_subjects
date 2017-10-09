@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.9.22)  8 OCT 2017 17:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.9.22)  9 OCT 2017 19:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -759,13 +759,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 93--95
 
  []
 
-<0.png, id=166, 462.528pt x 346.896pt>
+<0.png, id=212, 462.528pt x 346.896pt>
 File: 0.png Graphic file (type png)
  <use 0.png>
 Package pdftex.def Info: 0.png used on input line 101.
 (pdftex.def)             Requested size: 156.49014pt x 117.3661pt.
 
-<hist0.png, id=168, 462.528pt x 346.896pt>
+<hist0.png, id=214, 462.528pt x 346.896pt>
 File: hist0.png Graphic file (type png)
  <use hist0.png>
 Package pdftex.def Info: hist0.png used on input line 103.
@@ -795,13 +795,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 128--130
 
  []
 
-<1.png, id=184, 462.528pt x 346.896pt>
+<1.png, id=229, 462.528pt x 346.896pt>
 File: 1.png Graphic file (type png)
  <use 1.png>
 Package pdftex.def Info: 1.png used on input line 139.
 (pdftex.def)             Requested size: 156.49014pt x 117.3661pt.
 
-<hist1.png, id=185, 462.528pt x 346.896pt>
+<hist1.png, id=230, 462.528pt x 346.896pt>
 File: hist1.png Graphic file (type png)
  <use hist1.png>
 Package pdftex.def Info: hist1.png used on input line 141.
@@ -831,13 +831,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 168--170
 
  []
 
-<2.png, id=196, 462.528pt x 346.896pt>
+<2.png, id=241, 462.528pt x 346.896pt>
 File: 2.png Graphic file (type png)
  <use 2.png>
 Package pdftex.def Info: 2.png used on input line 177.
 (pdftex.def)             Requested size: 156.49014pt x 117.3661pt.
 
-<hist2.png, id=197, 462.528pt x 346.896pt>
+<hist2.png, id=242, 462.528pt x 346.896pt>
 File: hist2.png Graphic file (type png)
  <use hist2.png>
 Package pdftex.def Info: hist2.png used on input line 179.
@@ -872,13 +872,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 208--211
 
  []
 
-<3.png, id=209, 462.528pt x 346.896pt>
+<3.png, id=254, 462.528pt x 346.896pt>
 File: 3.png Graphic file (type png)
  <use 3.png>
 Package pdftex.def Info: 3.png used on input line 214.
 (pdftex.def)             Requested size: 156.49014pt x 117.3661pt.
 
-<hist3.png, id=210, 462.528pt x 346.896pt>
+<hist3.png, id=255, 462.528pt x 346.896pt>
 File: hist3.png Graphic file (type png)
  <use hist3.png>
 Package pdftex.def Info: hist3.png used on input line 216.
@@ -913,13 +913,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 251--254
 
  []
 
-<4.png, id=221, 462.528pt x 346.896pt>
+<4.png, id=266, 462.528pt x 346.896pt>
 File: 4.png Graphic file (type png)
  <use 4.png>
 Package pdftex.def Info: 4.png used on input line 257.
 (pdftex.def)             Requested size: 156.49014pt x 117.3661pt.
 
-<hist4.png, id=222, 462.528pt x 346.896pt>
+<hist4.png, id=267, 462.528pt x 346.896pt>
 File: hist4.png Graphic file (type png)
  <use hist4.png>
 Package pdftex.def Info: hist4.png used on input line 259.
@@ -954,13 +954,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 290--293
 
  []
 
-<5.png, id=233, 462.528pt x 346.896pt>
+<5.png, id=278, 462.528pt x 346.896pt>
 File: 5.png Graphic file (type png)
  <use 5.png>
 Package pdftex.def Info: 5.png used on input line 296.
 (pdftex.def)             Requested size: 156.49014pt x 117.3661pt.
 
-<hist5.png, id=234, 462.528pt x 346.896pt>
+<hist5.png, id=279, 462.528pt x 346.896pt>
 File: hist5.png Graphic file (type png)
  <use hist5.png>
 Package pdftex.def Info: hist5.png used on input line 298.
@@ -995,13 +995,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 329--332
 
  []
 
-<6.png, id=245, 462.528pt x 346.896pt>
+<6.png, id=290, 462.528pt x 346.896pt>
 File: 6.png Graphic file (type png)
  <use 6.png>
 Package pdftex.def Info: 6.png used on input line 335.
 (pdftex.def)             Requested size: 156.49014pt x 117.3661pt.
 
-<hist6.png, id=246, 462.528pt x 346.896pt>
+<hist6.png, id=291, 462.528pt x 346.896pt>
 File: hist6.png Graphic file (type png)
  <use hist6.png>
 Package pdftex.def Info: hist6.png used on input line 337.
@@ -1036,24 +1036,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 368--371
 
  []
 
-<7.png, id=262, 462.528pt x 346.896pt>
+<7.png, id=307, 462.528pt x 346.896pt>
 File: 7.png Graphic file (type png)
  <use 7.png>
 Package pdftex.def Info: 7.png used on input line 374.
 (pdftex.def)             Requested size: 156.49014pt x 117.3661pt.
 
-<hist7.png, id=263, 462.528pt x 346.896pt>
+<hist7.png, id=308, 462.528pt x 346.896pt>
 File: hist7.png Graphic file (type png)
  <use hist7.png>
 Package pdftex.def Info: hist7.png used on input line 376.
 (pdftex.def)             Requested size: 156.49014pt x 117.3661pt.
- [11 <./7.png> <./hist7.png>] <canny1.png, id=274, 462.528pt x 346.896pt>
+ [11 <./7.png> <./hist7.png>] <canny1.png, id=319, 462.528pt x 346.896pt>
 File: canny1.png Graphic file (type png)
  <use canny1.png>
 Package pdftex.def Info: canny1.png used on input line 385.
 (pdftex.def)             Requested size: 156.49014pt x 117.3661pt.
 
-<canny7.png, id=275, 462.528pt x 346.896pt>
+<canny7.png, id=320, 462.528pt x 346.896pt>
 File: canny7.png Graphic file (type png)
  <use canny7.png>
 Package pdftex.def Info: canny7.png used on input line 387.
@@ -1079,7 +1079,7 @@ File: hist0.png Graphic file (type png)
 <use hist0.png>
 Package pdftex.def Info: hist0.png used on input line 417.
 (pdftex.def)             Requested size: 156.49014pt x 117.3661pt.
- <histexample.png, id=289, 462.528pt x 346.896pt>
+ <histexample.png, id=334, 462.528pt x 346.896pt>
 File: histexample.png Graphic file (type png)
 
 <use histexample.png>
@@ -1125,57 +1125,329 @@ Underfull \hbox (badness 10000) in paragraph at lines 443--444
 
  []
 
-File: hist0.png Graphic file (type png)
-<use hist0.png>
-Package pdftex.def Info: hist0.png used on input line 450.
+[14] <GCLM_IMG_0_0.jpg, id=367, 642.4pt x 481.8pt>
+File: GCLM_IMG_0_0.jpg Graphic file (type jpg)
+ <use GCLM_IMG_0_0.jpg>
+Package pdftex.def Info: GCLM_IMG_0_0.jpg used on input line 451.
+(pdftex.def)             Requested size: 156.49014pt x 117.362pt.
+
+<GCLM_IMG_0_1.jpg, id=368, 642.4pt x 481.8pt>
+File: GCLM_IMG_0_1.jpg Graphic file (type jpg)
+ <use GCLM_IMG_0_1.jpg>
+Package pdftex.def Info: GCLM_IMG_0_1.jpg used on input line 453.
+(pdftex.def)             Requested size: 156.49014pt x 117.362pt.
+
+<GCLM_IMG_0_2.jpg, id=369, 642.4pt x 481.8pt>
+File: GCLM_IMG_0_2.jpg Graphic file (type jpg)
+ <use GCLM_IMG_0_2.jpg>
+Package pdftex.def Info: GCLM_IMG_0_2.jpg used on input line 455.
+(pdftex.def)             Requested size: 156.49014pt x 117.362pt.
+File: 0.png Graphic file (type png)
+
+<use 0.png>
+Package pdftex.def Info: 0.png used on input line 457.
 (pdftex.def)             Requested size: 156.49014pt x 117.3661pt.
-File: histexample.png Graphic file (type png)
- <use histexample.png>
-Package pdftex.def Info: histexample.png used on input line 452.
+ [15 <./GCLM_IMG_0_0.jpg> <./GCLM_IMG_0_1.jpg> <./GCLM_IMG_0_2.jpg>] <GCLM_IMG_
+1_0.jpg, id=379, 642.4pt x 481.8pt>
+File: GCLM_IMG_1_0.jpg Graphic file (type jpg)
+ <use GCLM_IMG_1_0.jpg>
+Package pdftex.def Info: GCLM_IMG_1_0.jpg used on input line 466.
+(pdftex.def)             Requested size: 156.49014pt x 117.362pt.
+
+<GCLM_IMG_1_1.jpg, id=380, 642.4pt x 481.8pt>
+File: GCLM_IMG_1_1.jpg Graphic file (type jpg)
+ <use GCLM_IMG_1_1.jpg>
+Package pdftex.def Info: GCLM_IMG_1_1.jpg used on input line 468.
+(pdftex.def)             Requested size: 156.49014pt x 117.362pt.
+
+<GCLM_IMG_1_2.jpg, id=381, 642.4pt x 481.8pt>
+File: GCLM_IMG_1_2.jpg Graphic file (type jpg)
+ <use GCLM_IMG_1_2.jpg>
+Package pdftex.def Info: GCLM_IMG_1_2.jpg used on input line 470.
+(pdftex.def)             Requested size: 156.49014pt x 117.362pt.
+File: 1.png Graphic file (type png)
+
+<use 1.png>
+Package pdftex.def Info: 1.png used on input line 472.
 (pdftex.def)             Requested size: 156.49014pt x 117.3661pt.
- [14]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 467.
- [15]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 467.
+ [16 <./GCLM_IMG_1_0.jpg> <./GCLM_IMG_1_1.jpg> <./GCLM_IMG_1_2.jpg>] <GCLM_IMG_
+2_0.jpg, id=391, 642.4pt x 481.8pt>
+File: GCLM_IMG_2_0.jpg Graphic file (type jpg)
+ <use GCLM_IMG_2_0.jpg>
+Package pdftex.def Info: GCLM_IMG_2_0.jpg used on input line 482.
+(pdftex.def)             Requested size: 156.49014pt x 117.362pt.
+
+<GCLM_IMG_2_1.jpg, id=392, 642.4pt x 481.8pt>
+File: GCLM_IMG_2_1.jpg Graphic file (type jpg)
+ <use GCLM_IMG_2_1.jpg>
+Package pdftex.def Info: GCLM_IMG_2_1.jpg used on input line 484.
+(pdftex.def)             Requested size: 156.49014pt x 117.362pt.
+
+<GCLM_IMG_2_2.jpg, id=393, 642.4pt x 481.8pt>
+File: GCLM_IMG_2_2.jpg Graphic file (type jpg)
+ <use GCLM_IMG_2_2.jpg>
+Package pdftex.def Info: GCLM_IMG_2_2.jpg used on input line 486.
+(pdftex.def)             Requested size: 156.49014pt x 117.362pt.
+File: 2.png Graphic file (type png)
+
+<use 2.png>
+Package pdftex.def Info: 2.png used on input line 488.
+(pdftex.def)             Requested size: 156.49014pt x 117.3661pt.
+ [17 <./GCLM_IMG_2_0.jpg> <./GCLM_IMG_2_1.jpg> <./GCLM_IMG_2_2.jpg>] <GCLM_IMG_
+3_0.jpg, id=403, 642.4pt x 481.8pt>
+File: GCLM_IMG_3_0.jpg Graphic file (type jpg)
+ <use GCLM_IMG_3_0.jpg>
+Package pdftex.def Info: GCLM_IMG_3_0.jpg used on input line 498.
+(pdftex.def)             Requested size: 156.49014pt x 117.362pt.
+
+<GCLM_IMG_3_1.jpg, id=404, 642.4pt x 481.8pt>
+File: GCLM_IMG_3_1.jpg Graphic file (type jpg)
+ <use GCLM_IMG_3_1.jpg>
+Package pdftex.def Info: GCLM_IMG_3_1.jpg used on input line 500.
+(pdftex.def)             Requested size: 156.49014pt x 117.362pt.
+
+<GCLM_IMG_3_2.jpg, id=405, 642.4pt x 481.8pt>
+File: GCLM_IMG_3_2.jpg Graphic file (type jpg)
+ <use GCLM_IMG_3_2.jpg>
+Package pdftex.def Info: GCLM_IMG_3_2.jpg used on input line 502.
+(pdftex.def)             Requested size: 156.49014pt x 117.362pt.
+File: 3.png Graphic file (type png)
+
+<use 3.png>
+Package pdftex.def Info: 3.png used on input line 504.
+(pdftex.def)             Requested size: 156.49014pt x 117.3661pt.
+ [18 <./GCLM_IMG_3_0.jpg> <./GCLM_IMG_3_1.jpg> <./GCLM_IMG_3_2.jpg>] <GCLM_IMG_
+4_0.jpg, id=415, 642.4pt x 481.8pt>
+File: GCLM_IMG_4_0.jpg Graphic file (type jpg)
+ <use GCLM_IMG_4_0.jpg>
+Package pdftex.def Info: GCLM_IMG_4_0.jpg used on input line 514.
+(pdftex.def)             Requested size: 156.49014pt x 117.362pt.
+
+<GCLM_IMG_4_1.jpg, id=416, 642.4pt x 481.8pt>
+File: GCLM_IMG_4_1.jpg Graphic file (type jpg)
+ <use GCLM_IMG_4_1.jpg>
+Package pdftex.def Info: GCLM_IMG_4_1.jpg used on input line 516.
+(pdftex.def)             Requested size: 156.49014pt x 117.362pt.
+
+<GCLM_IMG_4_2.jpg, id=417, 642.4pt x 481.8pt>
+File: GCLM_IMG_4_2.jpg Graphic file (type jpg)
+ <use GCLM_IMG_4_2.jpg>
+Package pdftex.def Info: GCLM_IMG_4_2.jpg used on input line 518.
+(pdftex.def)             Requested size: 156.49014pt x 117.362pt.
+File: 4.png Graphic file (type png)
+
+<use 4.png>
+Package pdftex.def Info: 4.png used on input line 520.
+(pdftex.def)             Requested size: 156.49014pt x 117.3661pt.
+ [19 <./GCLM_IMG_4_0.jpg> <./GCLM_IMG_4_1.jpg> <./GCLM_IMG_4_2.jpg>] <GCLM_IMG_
+5_0.jpg, id=428, 642.4pt x 481.8pt>
+File: GCLM_IMG_5_0.jpg Graphic file (type jpg)
+ <use GCLM_IMG_5_0.jpg>
+Package pdftex.def Info: GCLM_IMG_5_0.jpg used on input line 531.
+(pdftex.def)             Requested size: 156.49014pt x 117.362pt.
+
+<GCLM_IMG_5_1.jpg, id=429, 642.4pt x 481.8pt>
+File: GCLM_IMG_5_1.jpg Graphic file (type jpg)
+ <use GCLM_IMG_5_1.jpg>
+Package pdftex.def Info: GCLM_IMG_5_1.jpg used on input line 533.
+(pdftex.def)             Requested size: 156.49014pt x 117.362pt.
+
+<GCLM_IMG_5_2.jpg, id=430, 642.4pt x 481.8pt>
+File: GCLM_IMG_5_2.jpg Graphic file (type jpg)
+ <use GCLM_IMG_5_2.jpg>
+Package pdftex.def Info: GCLM_IMG_5_2.jpg used on input line 535.
+(pdftex.def)             Requested size: 156.49014pt x 117.362pt.
+File: 5.png Graphic file (type png)
+
+<use 5.png>
+Package pdftex.def Info: 5.png used on input line 537.
+(pdftex.def)             Requested size: 156.49014pt x 117.3661pt.
+ [20 <./GCLM_IMG_5_0.jpg> <./GCLM_IMG_5_1.jpg> <./GCLM_IMG_5_2.jpg>] <GCLM_IMG_
+6_0.jpg, id=440, 642.4pt x 481.8pt>
+File: GCLM_IMG_6_0.jpg Graphic file (type jpg)
+ <use GCLM_IMG_6_0.jpg>
+Package pdftex.def Info: GCLM_IMG_6_0.jpg used on input line 548.
+(pdftex.def)             Requested size: 156.49014pt x 117.362pt.
+
+<GCLM_IMG_6_1.jpg, id=441, 642.4pt x 481.8pt>
+File: GCLM_IMG_6_1.jpg Graphic file (type jpg)
+ <use GCLM_IMG_6_1.jpg>
+Package pdftex.def Info: GCLM_IMG_6_1.jpg used on input line 550.
+(pdftex.def)             Requested size: 156.49014pt x 117.362pt.
+
+<GCLM_IMG_6_2.jpg, id=442, 642.4pt x 481.8pt>
+File: GCLM_IMG_6_2.jpg Graphic file (type jpg)
+ <use GCLM_IMG_6_2.jpg>
+Package pdftex.def Info: GCLM_IMG_6_2.jpg used on input line 552.
+(pdftex.def)             Requested size: 156.49014pt x 117.362pt.
+File: 6.png Graphic file (type png)
+
+<use 6.png>
+Package pdftex.def Info: 6.png used on input line 554.
+(pdftex.def)             Requested size: 156.49014pt x 117.3661pt.
+ [21 <./GCLM_IMG_6_0.jpg> <./GCLM_IMG_6_1.jpg> <./GCLM_IMG_6_2.jpg>] <GCLM_IMG_
+7_0.jpg, id=452, 642.4pt x 481.8pt>
+File: GCLM_IMG_7_0.jpg Graphic file (type jpg)
+ <use GCLM_IMG_7_0.jpg>
+Package pdftex.def Info: GCLM_IMG_7_0.jpg used on input line 565.
+(pdftex.def)             Requested size: 156.49014pt x 117.362pt.
+
+<GCLM_IMG_7_1.jpg, id=453, 642.4pt x 481.8pt>
+File: GCLM_IMG_7_1.jpg Graphic file (type jpg)
+ <use GCLM_IMG_7_1.jpg>
+Package pdftex.def Info: GCLM_IMG_7_1.jpg used on input line 567.
+(pdftex.def)             Requested size: 156.49014pt x 117.362pt.
+
+<GCLM_IMG_7_2.jpg, id=454, 642.4pt x 481.8pt>
+File: GCLM_IMG_7_2.jpg Graphic file (type jpg)
+ <use GCLM_IMG_7_2.jpg>
+Package pdftex.def Info: GCLM_IMG_7_2.jpg used on input line 569.
+(pdftex.def)             Requested size: 156.49014pt x 117.362pt.
+File: 7.png Graphic file (type png)
+
+<use 7.png>
+Package pdftex.def Info: 7.png used on input line 571.
+(pdftex.def)             Requested size: 156.49014pt x 117.3661pt.
+ [22 <./GCLM_IMG_7_0.jpg> <./GCLM_IMG_7_1.jpg> <./GCLM_IMG_7_2.jpg>] <oppg4iner
+tia0.png, id=465, 462.528pt x 346.896pt>
+File: oppg4inertia0.png Graphic file (type png)
+ <use oppg4inertia0.png>
+Package pdftex.def Info: oppg4inertia0.png used on input line 590.
+(pdftex.def)             Requested size: 156.49014pt x 117.3661pt.
+
+<oppg4inertia1.png, id=466, 462.528pt x 346.896pt>
+File: oppg4inertia1.png Graphic file (type png)
+ <use oppg4inertia1.png>
+Package pdftex.def Info: oppg4inertia1.png used on input line 592.
+(pdftex.def)             Requested size: 156.49014pt x 117.3661pt.
+
+<oppg4homo0.png, id=467, 462.528pt x 346.896pt>
+File: oppg4homo0.png Graphic file (type png)
+ <use oppg4homo0.png>
+Package pdftex.def Info: oppg4homo0.png used on input line 599.
+(pdftex.def)             Requested size: 156.49014pt x 117.3661pt.
+
+<oppg4homo1.png, id=468, 462.528pt x 346.896pt>
+File: oppg4homo1.png Graphic file (type png)
+ <use oppg4homo1.png>
+Package pdftex.def Info: oppg4homo1.png used on input line 601.
+(pdftex.def)             Requested size: 156.49014pt x 117.3661pt.
+
+<oppg4cluster0.png, id=469, 462.528pt x 346.896pt>
+File: oppg4cluster0.png Graphic file (type png)
+ <use oppg4cluster0.png>
+Package pdftex.def Info: oppg4cluster0.png used on input line 610.
+(pdftex.def)             Requested size: 156.49014pt x 117.3661pt.
+
+<oppg4cluster1.png, id=470, 462.528pt x 346.896pt>
+File: oppg4cluster1.png Graphic file (type png)
+ <use oppg4cluster1.png>
+Package pdftex.def Info: oppg4cluster1.png used on input line 612.
+(pdftex.def)             Requested size: 156.49014pt x 117.3661pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[23 <./oppg4inertia0.png> <./oppg4inertia1.png> <./oppg4homo0.png> <./oppg4homo
+1.png>] <oppg4inertia0filter.png, id=486, 462.528pt x 346.896pt>
+File: oppg4inertia0filter.png Graphic file (type png)
+
+<use oppg4inertia0filter.png>
+Package pdftex.def Info: oppg4inertia0filter.png used on input line 629.
+(pdftex.def)             Requested size: 156.49014pt x 117.3661pt.
+
+<oppg4inertia1filter.png, id=487, 462.528pt x 346.896pt>
+File: oppg4inertia1filter.png Graphic file (type png)
+
+<use oppg4inertia1filter.png>
+Package pdftex.def Info: oppg4inertia1filter.png used on input line 631.
+(pdftex.def)             Requested size: 156.49014pt x 117.3661pt.
+ [24 <./oppg4cluster0.png> <./oppg4cluster1.png> <./oppg4inertia0filter.png> <.
+/oppg4inertia1filter.png>]
+<oppg4homo0filter.png, id=503, 462.528pt x 346.896pt>
+File: oppg4homo0filter.png Graphic file (type png)
+
+<use oppg4homo0filter.png>
+Package pdftex.def Info: oppg4homo0filter.png used on input line 646.
+(pdftex.def)             Requested size: 156.49014pt x 117.3661pt.
+
+<oppg4homo1filter.png, id=504, 462.528pt x 346.896pt>
+File: oppg4homo1filter.png Graphic file (type png)
+
+<use oppg4homo1filter.png>
+Package pdftex.def Info: oppg4homo1filter.png used on input line 648.
+(pdftex.def)             Requested size: 156.49014pt x 117.3661pt.
+ [25 <./oppg4homo0filter.png> <./oppg4homo1filter.png>] <oppg4cluster0filter.pn
+g, id=516, 462.528pt x 346.896pt>
+File: oppg4cluster0filter.png Graphic file (type png)
+
+<use oppg4cluster0filter.png>
+Package pdftex.def Info: oppg4cluster0filter.png used on input line 668.
+(pdftex.def)             Requested size: 156.49014pt x 117.3661pt.
+
+<oppg4cluster1filter.png, id=517, 462.528pt x 346.896pt>
+File: oppg4cluster1filter.png Graphic file (type png)
+
+<use oppg4cluster1filter.png>
+Package pdftex.def Info: oppg4cluster1filter.png used on input line 670.
+(pdftex.def)             Requested size: 156.49014pt x 117.3661pt.
+ [26 <./oppg4cluster0filter.png> <./oppg4cluster1filter.png>] <save4.png, id=52
+7, 1373.13pt x 1373.13pt>
+File: save4.png Graphic file (type png)
+ <use save4.png>
+Package pdftex.def Info: save4.png used on input line 679.
+(pdftex.def)             Requested size: 370.75006pt x 370.75006pt.
+
+Overfull \hbox (25.75006pt too wide) in paragraph at lines 679--680
+[][] 
+ []
+
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 687.
+(../assignment1.py [27 <./save4.png>]
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 10.
+ [28] [29] [30] [31] [32] [33] [34])
+(../funcs.py [35] [36] [37])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 694.
+ [38]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 694.
  (./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 467.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 467.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 694.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 694.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 5E3999CD35A8EA2BB49346C9811AE62E;1816.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 467.
+(rerunfilecheck)             Checksum: F200421ECFE6E871CA4AC8112022EABD;2341.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 694.
  ) 
 Here is how much of TeX's memory you used:
- 10248 strings out of 493029
- 146374 string characters out of 6136234
- 254653 words of memory out of 5000000
- 13563 multiletter control sequences out of 15000+600000
+ 11257 strings out of 493029
+ 161999 string characters out of 6136234
+ 497587 words of memory out of 5000000
+ 13881 multiletter control sequences out of 15000+600000
  16957 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,10n,49p,297b,1296s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,11n,49p,297b,1888s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmsy7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb>
-</usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fo
-nts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-
-super/sfrm0500.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0600.pfb><
-/usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf/fon
-ts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm-s
-uper/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></
-usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf/font
-s/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-su
-per/sftt1000.pfb>
-Output written on report.pdf (15 pages, 1189386 bytes).
+sfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmsy8.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/s
+hare/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/typ
+e1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
+frm0500.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0600.pfb></usr/sh
+are/texmf/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf/fonts/type
+1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
+rm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/sha
+re/texmf/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf/fonts/type1
+/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sft
+t1000.pfb>
+Output written on report.pdf (38 pages, 4642588 bytes).
 PDF statistics:
- 409 PDF objects out of 1000 (max. 8388607)
- 330 compressed objects within 4 object streams
- 85 named destinations out of 1000 (max. 500000)
- 320 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1359 PDF objects out of 1440 (max. 8388607)
+ 1198 compressed objects within 12 object streams
+ 730 named destinations out of 1000 (max. 500000)
+ 577 words of extra memory for PDF output out of 10000 (max. 10000000)
 

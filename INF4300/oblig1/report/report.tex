@@ -36,9 +36,9 @@
 tabsize=2}
 \lstset{style=mystyle}
 
-\title{Oblig1 INF2270}
+\title{Oblig1 INF4300}
 \author{mathiaki}
-\date{February 2017}
+
 
 \begin{document}
 
@@ -50,7 +50,7 @@ tabsize=2}
 
 \section{Texture description}
 In this part of the report I will try to analyze the different textures.
-I will go through every sub-texture and give a description based on: Characteristics, Texture direction, frequency of the texture, variance of the texture, homogenity, and the size of the texture elements.  \\
+I will go through every sub-texture and give a description based on: characteristics, texture direction, frequency of the texture, variance of the texture, homogeneity, and the size of the texture elements.  \\
 
  
 Before i describe the different textures, i will index the different images in the following way: (the same is true for the program)\\
@@ -94,7 +94,7 @@ If we look at the histogram, we can see that it is one of the textures with the 
 The texture is has very few homogeneous areas.\\
 
 \textbf{Texture element size}\\
-As mentioned, the texture is very like random noise, so the size is hard to determine. If we think of the elements as the crevasses, the texture element size is a few pixels.  
+As mentioned, the texture is very similar to random noise, so the size is hard to determine. If we think of the elements as the crevasses, the texture element size is a few pixels.  
 
 \begin{figure}[h]%
 	\centering
@@ -396,13 +396,13 @@ Texture element size here is 3*3 px** 2
 \section{Visualizing the GLCM matrices}
 
 Now that we have a description of each image we want to work on each one of the images separately. And the first thing we want to do is to find a suitable GLCM.
-The problem with running a GLCM on the images is that we have 255 different grey-levels. So there are 2 operations we want to do before we continue.\\
+The problem with running a GLCM on the images is that we have 255 different grey-levels. So there are two operations we want to do before we continue.\\
 \begin{itemize}
 	\item rescale the histogram\footnote{The reason that we rescale the histogram is to ensure that the histogram isn't skewed. With a rescaled histogram we can be more certain that the GLCM is better represented.}
 	\item reduce the number of grey levels.
 \end{itemize}    
 
-This can be don with the cv2 and skimage packages:
+This can be done with the cv2 and skimage packages:
 \begin{lstlisting}[language=python]
 
 equalized_hist=cv2.equalizeHist(original_img)
@@ -432,7 +432,7 @@ At the end we get the Original picture histeq-ed with 16 grey-levels.
 	\subsubsection{Texture 2}
 		As we remember from \ref{fig:IMG2} we should use the angle $1.745$ rad and the dist 8 px. (length can vary on this one)\\
 	\subsubsection{Texture 3}
-		As we remember from \ref{fig:IMG3} it was isotropic , so we use dist 2px. (isotropic is here just the average of linspace(0,$2\pi$,8))\\
+		As we remember from \ref{fig:IMG3} it was isotropic , so we use dist 2px. (isotropic is here just the average of linspace(0,$2\pi$,4))\\
 	\subsubsection{Texture 4}
 		As we remember from \ref{fig:IMG4} we should use the angle $\frac{3\pi}{4}$ and the angle $\frac{\pi}{4}$ the dist 7px.\\
 	\subsubsection{Texture 5}
@@ -440,29 +440,256 @@ At the end we get the Original picture histeq-ed with 16 grey-levels.
 	\subsubsection{Texture 6}
 		As we remember from \ref{fig:IMG6} we should use the angle $\pi$ and the dist 8px (here we can use any length, preferably something that is not in the frequency of the horizontal component)\\
 	\subsubsection{Texture 7}
-		As we remember from \ref{fig:IMG7} it was isotropic , so we use dist 3px. (isotropic is here just the average of linspace(0,$2\pi$,8))\\
+		As we remember from \ref{fig:IMG7} it was isotropic , so we use dist 3px. (isotropic is here just the average of linspace(0,$2\pi$,4))\\
 
 \subsection{The GLCM Results}
-	\setcounter{subsubsection}{-1}	
+	\setcounter{subsubsection}{-1}
+	\textit{Keep in mind that the normalization of the textures often cut out most of the highest values, so it looks like we have no 15 value pixels. In truth they do exist, but we have only a few of them.}	
 	\subsubsection{Texture 0}
 		\begin{figure}[h]%
 			\centering
-    		\subfloat[Old Histogram]{{\includegraphics[width=5.5cm]{hist0.png} }}%
+    		\subfloat[GCLM 0 0]{{\includegraphics[width=5.5cm]{GCLM_IMG_0_0.jpg} }}%
     		\qquad
-    		\subfloat[New Histogram]{{\includegraphics[width=5.5cm]{histexample.png} }}%
-    		\caption{Transformation of the histogram (just an example, not actual transformation)}%
-    		\label{fig:Transform}%
+    		\subfloat[GCLM 0 1]{{\includegraphics[width=5.5cm]{GCLM_IMG_0_1.jpg} }}%
+    		\qquad
+    		\subfloat[GCLM 0 2]{{\includegraphics[width=5.5cm]{GCLM_IMG_0_2.jpg} }}%
+    		\qquad
+    		\subfloat[Texture 0]{{\includegraphics[width=5.5cm]{0.png} }}%
+    		\caption{GLCM IMG 0: pi rad}%
+    		\label{fig:GLCM_0}%
 		\end{figure}
-
+		As we can see from the GLCM of the first picture, we got a lot of pixels switching between 0 and 14 in all 3 of the tests. This could indicate that we have a pattern, but it is more likely that any angle would produce this result. 
+\newpage		
 	\subsubsection{Texture 1}
+		\begin{figure}[h]%
+			\centering
+    		\subfloat[GCLM 1 0]{{\includegraphics[width=5.5cm]{GCLM_IMG_1_0.jpg} }}%
+    		\qquad
+    		\subfloat[GCLM 1 1]{{\includegraphics[width=5.5cm]{GCLM_IMG_1_1.jpg} }}%
+    		\qquad
+    		\subfloat[GCLM 1 2]{{\includegraphics[width=5.5cm]{GCLM_IMG_1_2.jpg} }}%
+    		\qquad
+    		\subfloat[Texture 1]{{\includegraphics[width=5.5cm]{1.png} }}%
+    		
+    		\caption{GLCM IMG 1: pi rad}%
+    		\label{fig:GLCM_1}%
+		\end{figure}
+		Again we have pretty similar result in all 3 tests. I don't think we can draw any clear results from this test.
+\newpage
 	\subsubsection{Texture 2}
+		\begin{figure}[h]%
+			\centering
+    		\subfloat[GCLM 2 0]{{\includegraphics[width=5.5cm]{GCLM_IMG_2_0.jpg} }}%
+    		\qquad
+    		\subfloat[GCLM 2 1]{{\includegraphics[width=5.5cm]{GCLM_IMG_2_1.jpg} }}%
+    		\qquad
+    		\subfloat[GCLM 2 2]{{\includegraphics[width=5.5cm]{GCLM_IMG_2_2.jpg} }}%
+    		\qquad
+    		\subfloat[Texture 2]{{\includegraphics[width=5.5cm]{2.png} }}%
+
+    		\caption{GLCM IMG 2: pi rad}%
+    		\label{fig:GLCM_2}%
+		\end{figure}
+		Here we have tried to land on the same line twice. From the tests, it looks like we had some good results at b) and c), since we have some good jumps from high values to other high values.
+\newpage
 	\subsubsection{Texture 3}
+		\begin{figure}[h]%
+			\centering
+    		\subfloat[GCLM 3 0]{{\includegraphics[width=5.5cm]{GCLM_IMG_3_0.jpg} }}%
+    		\qquad
+    		\subfloat[GCLM 3 1]{{\includegraphics[width=5.5cm]{GCLM_IMG_3_1.jpg} }}%
+    		\qquad
+    		\subfloat[GCLM 3 2]{{\includegraphics[width=5.5cm]{GCLM_IMG_3_2.jpg} }}%
+    		\qquad
+    		\subfloat[Texture 3]{{\includegraphics[width=5.5cm]{3.png} }}%
+
+    		\caption{GLCM IMG 3: pi rad}%
+    		\label{fig:GLCM_3}%
+		\end{figure}
+		Number 3 was an isometric test, so we are here looking at the length, and not the angle if the GLCM input. (a) gives us the best result, where we can clearly see that we either stay at a high value, or we stay at a low value.
+\newpage
 	\subsubsection{Texture 4}
-	\subsubsection{Texture 5}
-	\subsubsection{Texture 6}
-	\subsubsection{Texture 7}
+		\begin{figure}[h]%
+			\centering
+    		\subfloat[GCLM 4 0]{{\includegraphics[width=5.5cm]{GCLM_IMG_4_0.jpg} }}%
+    		\qquad
+    		\subfloat[GCLM 4 1]{{\includegraphics[width=5.5cm]{GCLM_IMG_4_1.jpg} }}%
+    		\qquad
+    		\subfloat[GCLM 4 2]{{\includegraphics[width=5.5cm]{GCLM_IMG_4_2.jpg} }}%
+    		\qquad
+    		\subfloat[Texture 4]{{\includegraphics[width=5.5cm]{4.png} }}%
 
+    		\caption{GLCM IMG 4: pi rad}%
+    		\label{fig:GLCM_4}%
+		\end{figure}
+		We are here looking at a diagonal GLCM, and especially (b) yields a good result. It looks like we have a texture pattern.		
 		
+\newpage
+	\subsubsection{Texture 5}
+		\begin{figure}[h]%
+			\centering
+    		\subfloat[GCLM 5 0]{{\includegraphics[width=5.5cm]{GCLM_IMG_5_0.jpg} }}%
+    		\qquad
+    		\subfloat[GCLM 5 1]{{\includegraphics[width=5.5cm]{GCLM_IMG_5_1.jpg} }}%
+    		\qquad
+    		\subfloat[GCLM 5 2]{{\includegraphics[width=5.5cm]{GCLM_IMG_5_2.jpg} }}%
+    		    		\qquad
+    		\subfloat[Texture 5]{{\includegraphics[width=5.5cm]{5.png} }}%
 
+    		\caption{GLCM IMG 5: pi rad}%
+    		\label{fig:GLCM_5}%
+		\end{figure}
+		Texture 5 gave us the best result in (a)
+	
+\newpage
+	\subsubsection{Texture 6}
+		\begin{figure}[h]%
+			\centering
+    		\subfloat[GCLM 6 0]{{\includegraphics[width=5.5cm]{GCLM_IMG_6_0.jpg} }}%
+    		\qquad
+    		\subfloat[GCLM 6 1]{{\includegraphics[width=5.5cm]{GCLM_IMG_6_1.jpg} }}%
+    		\qquad
+    		\subfloat[GCLM 6 2]{{\includegraphics[width=5.5cm]{GCLM_IMG_6_2.jpg} }}%
+    		    		\qquad
+    		\subfloat[Texture 6]{{\includegraphics[width=5.5cm]{6.png} }}%
+
+    		\caption{GLCM IMG 6: pi rad}%
+    		\label{fig:GLCM_6}%
+		\end{figure}
+		At texture 6 we got the best result at (a), this is because of the short length. It is less likely to swey off target compared to the other length.		
+		
+\newpage
+	\subsubsection{Texture 7}
+		\begin{figure}[h]%
+			\centering
+    		\subfloat[GCLM 7 0]{{\includegraphics[width=5.5cm]{GCLM_IMG_7_0.jpg} }}%
+    		\qquad
+    		\subfloat[GCLM 7 1]{{\includegraphics[width=5.5cm]{GCLM_IMG_7_1.jpg} }}%
+    		\qquad
+    		\subfloat[GCLM 7 2]{{\includegraphics[width=5.5cm]{GCLM_IMG_7_2.jpg} }}%
+    		    		\qquad
+    		\subfloat[Texture 7]{{\includegraphics[width=5.5cm]{7.png} }}%
+
+    		\caption{GLCM IMG 7: pi rad}%
+    		\label{fig:GLCM_7}%
+		\end{figure}
+		Texture 7 is another isometric GLCM, and the shortest length gave us the best result.
+
+\section{Computing features}
+	Now that we have the have the GLCM matrices, we can now try to find:
+	\begin{itemize}
+		\item GLCM homogeneity
+		\item GLCM inertia
+		\item GLCM cluster shade
+	\end{itemize}
+	The formulas for the sliding window is in the assignment, and the code for the sliding window is found in appendix A.
+\newpage
+\subsection{Computing features result}
+	\begin{figure}[h]%
+		\centering
+    	\subfloat[First 4 inertia images]{{\includegraphics[width=5.5cm]{oppg4inertia0.png} }}%
+	    \qquad
+	    \subfloat[Last 4 inertia images]{{\includegraphics[width=5.5cm]{oppg4inertia1.png} }}%
+	    \caption{Global inertia with sliding window with size 25}%
+    	\label{fig:INERTIA}%
+\end{figure}
+Here we can see the global inertia, with a windowsize of 25. I've used the value 25 for the window size for all 3 of the calculations. This is because it is big enough to get multiple texture elements, and also small enough to not take multiple textures at once.   
+	\begin{figure}[h]%
+		\centering
+    	\subfloat[First 4 homogeneity images]{{\includegraphics[width=5.5cm]{oppg4homo0.png} }}%
+	    \qquad
+	    \subfloat[Last 4 homogeneity images]{{\includegraphics[width=5.5cm]{oppg4homo1.png} }}%
+	    \caption{Global homogeneity with sliding window with size 25}%
+    	\label{fig:homo}%
+\end{figure}
+
+
+
+\begin{figure}[h]%
+		\centering
+    	\subfloat[First 4 cluster shade images]{{\includegraphics[width=5.5cm]{oppg4cluster0.png} }}%
+	    \qquad
+	    \subfloat[Last 4 cluster shade images]{{\includegraphics[width=5.5cm]{oppg4cluster1.png} }}%
+	    \caption{Global cluster shade with sliding window with size 25}%
+    	\label{fig:cluster}%
+\end{figure}
+
+\newpage
+\section{The GLCM Global thresholding}
+
+	Now that we have the features from assignment C, we can now use the result to try to globally threshold:
+\subsection{Inertia}
+
+
+From \ref{fig:INERTIA}, we can assume that the first image has a threshold of 5 and the second 8.
+		 
+		 
+\begin{figure}[h]%
+		\centering
+    	\subfloat[First 4 inertia images]{{\includegraphics[width=5.5cm]{oppg4inertia0filter.png}}}%
+	    \qquad
+	    \subfloat[Last 4 inertia images]{{\includegraphics[width=5.5cm]{oppg4inertia1filter.png} }}%
+	    \caption{filter of the inertia}%
+    	\label{fig:inertiafilter}%
+\end{figure}	
+
+From this result we managed to filter out one of the textures from each picture.
+
+\newpage 
+\section{Homogeneity}
+
+From \ref{fig:homo}, we can assume that the first image has a threshold of 0.45 and the second image 0.5
+		 
+		 
+\begin{figure}[h]%
+		\centering
+    	\subfloat[First 4 homogeneity images]{{\includegraphics[width=5.5cm]{oppg4homo0filter.png}}}%
+	    \qquad
+	    \subfloat[Last 4 homogeneity images]{{\includegraphics[width=5.5cm]{oppg4homo1filter.png} }}%
+	    \caption{filter of the homogeneity}%
+    	\label{fig:homofilter}%
+\end{figure}	
+
+From this result we managed to filter out one of the textures from each picture.
+	
+
+	 
+	 from homogeneity we can se tht the first img has threshold 0.45 and the second 0.5
+	 
+	 45000 and 60000
+
+\newpage
+\subsection{Cluster shade}
+	From \ref{fig:cluster}, we can assume that the first image has a threshold of 450000 and the second image 60000
+		 
+		 
+\begin{figure}[h]%
+		\centering
+    	\subfloat[First 4 cluster shade images]{{\includegraphics[width=5.5cm]{oppg4cluster0filter.png}}}%
+	    \qquad
+	    \subfloat[Last 4 cluster shade images]{{\includegraphics[width=5.5cm]{oppg4cluster1filter.png} }}%
+	    \caption{filter of the cluster shade}%
+    	\label{fig:clusterfilter}%
+\end{figure}	
+\newpage
+\subsection{Comment on thresholding}
+	In this last assignment, we used the most primitive way of thresholding: trail and error.\\ 
+	Another way is to use one of the predetermined algorithms from the course:
+\begin{figure}[h]%
+		\includegraphics[scale=0.27]{save4.png}
+	    \caption{Different algorithms for testing thresholding}
+    	\label{fig:otsuandfriends}%
+\end{figure}	
+This is in the case that you need an automatic way to find the threshold. 
+	 
+\section{Appendix A}
+This is the main program, that runs though all the assignments.
+\lstinputlisting[language=Python]{../assignment1.py}
+
+\section{Appendix B}
+This is all the functions used by the main program
+\lstinputlisting[language=Python]{../funcs.py}
+
+	
 \end{document}\\
 

@@ -20,16 +20,18 @@ class w():
 pl=[]
 t=np.linspace(-1,1,500)
 for i in [0,0.25,0.5,0.75,1]:
-    tuk=w(2.8, i)
+    tuk=w(2.7, i)
     v=np.vectorize(tuk) 
     pl.append((v(t),i))
-"""
+    
+
 for l in pl:
     plt.plot(t,l[0])
 
 plt.legend(["r={}".format(l[1]) for l in pl]) 
 plt.show()
-"""
+
+
 ##############
 #### 7.57 ####
 ##############
@@ -37,10 +39,10 @@ plt.show()
 
         
 def win(t):
-    ret=0
+    ret=[]
     for k in range(1,K+1):
         Fk=f_l+(k-1)*(f_h-f_l)/(K-1)
-        ret+=np.cos(2*np.pi*Fk*t)
+        ret.append(np.cos(2*np.pi*Fk*t))
     return ret
         
 
@@ -53,5 +55,5 @@ a=abs(np.fft.fft(win(t)))
 plt.plot(t,a)
 plt.show()
 
-:
+
     

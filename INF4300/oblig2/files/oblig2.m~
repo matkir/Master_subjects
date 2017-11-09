@@ -110,7 +110,7 @@ imagesc(s16)
 %from texture 4
 %
 
-a=quadrant(1,s1);
+a=quadrant(1,s1)
 
 
 

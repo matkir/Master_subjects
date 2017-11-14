@@ -1,6 +1,6 @@
 function glcm = GLCM(img, G, dx, dy)
 % at this pont in the process this function was not self-made.
-% Heavy inspiration for Kristoffer Høisæter, since he did the first
+% Heavy inspiration for Kristoffer Hoisaeter, since he did the first
 % obligatory assignment in MATLAB, and I made my gliding window in python.
 
 
@@ -15,8 +15,8 @@ glcm = zeros(G);
 for i=1:M
     for j=1:N
         %making sure the indexes does not exceed matrix dimensions
-        if j + dy < 1 || j + dy > N || i + dx < 1 || i + dx > M
-            continue
+        if j + dy < 1 || j + dy > N || i + dx < 1 || i + dx > M;
+            continue;
         else
             a = img(i,j);
             b = img(i+dx,j+dy);

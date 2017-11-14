@@ -31,8 +31,8 @@ Q14 = zeros(M,N);
 
 
 %going through the image
-for m = 1+halfW:Mborder-halfW-1
-    for n = 1+halfW:Nborder-halfW-1
+for m = 1+halfW:Mborder-halfW-1;
+    for n = 1+halfW:Nborder-halfW-1;
         
         win = imgBorder(m-halfW:m+halfW, n-halfW:n+halfW);
 

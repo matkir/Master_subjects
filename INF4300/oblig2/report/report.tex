@@ -92,7 +92,7 @@ tabsize=2}
 		\centering
     	\subfloat[Texture 4]{{\includegraphics[width=12.5cm]{o1_f4.jpg} }}%
     	\caption{Texture 4 GLCM}%
-    	\label{fig:o1_f1}%
+    	\label{fig:o1_f4}%
 	\end{figure}
 
 	From this first texture we choose the first of the 4 images.\\
@@ -101,6 +101,11 @@ tabsize=2}
 	
 	
 	Now that we have all the necessary dxy values, we can now start with the sliding GLCM part of the program. 
+
+\newpage
+From this point onwards we stop using the GLCM matrices from the assignment, and start making and using our own:
+\lstinputlisting[language=Matlab]{../files/GLCM.m}
+An important note here is that the GLCM is going to be symmetric, so Q2 and Q3 will be (close to) identical every time.
 
 
 \newpage
@@ -131,9 +136,49 @@ When we now run the gliding GLCM the result of the different quadrants are store
 As the Q1 quadrant has the most difference between the different textures, it is natural to spit the quadrant up in to 4 subquadrants. 
 \lstinputlisting[language=Matlab]{../files/gGLCM.m}
 
+\newpage
+The Q matrices can now be analyzed: \\
+	\begin{figure}[h]%
+		\centering
+    	\subfloat[Texture 4]{{\includegraphics[width=12.5cm]{o3_q4.jpg} }}%
+    	\caption{Texture 4 GLCM}%
+    	\label{fig:o1_f4}%
+	\end{figure}
+
+	\begin{figure}[h]%
+		\centering
+    	\subfloat[Texture 4]{{\includegraphics[width=12.5cm]{o3_q4.jpg} }}%
+    	\caption{Texture 4 GLCM}%
+    	\label{fig:o1_f4}%
+	\end{figure}
+
+	\begin{figure}[h]%
+		\centering
+    	\subfloat[Texture 4]{{\includegraphics[width=12.5cm]{o3_q4.jpg} }}%
+    	\caption{Texture 4 GLCM}%
+    	\label{fig:o1_f4}%
+	\end{figure}
 
 
+Instead of showing all 8 sliding window GLCM matrices, I have chosen to only show the 3 that i used throughout the rest of the assignment.
 
+
+\section{Multivariate Gaussian Classifier}
+	After we got the GLCM matrix for the 3 different values, our next next task is to use a Multivariate Gaussian Classifier to try to classify the 4 patterns.\\
+		
+	The formula for Multivariate Gaussian Classifier (in multiple dimensions) is:
+	\begin{center}
+		$p ( x | \mu , \sum)=\frac{1}{(2\pi)^{\frac{d}{2}}}exp\left(-\frac{1}{2}(x-\mu)^T\sum^{-1}(x-\mu)\right)$
+	\end{center}
+	
+\section{Classification}
+	this is clasification
+
+\section{Testing}
+	this is testing
+	
+
+			
 
 
 

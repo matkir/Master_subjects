@@ -118,25 +118,17 @@ imagesc(s16)
 
 
 %% Oppgave 2
-%as described in the report. we kept 
-%
-%from texture 1
-%
-%from texture 2
-%
-%from texture 3
-%
-%from texture 4
-%
 
+% running gliding GLCM with dx=1 and dy=0 and keeping Q1
 [tmpQ1,tmpQ2,tmpQ3,tmpQ4,tmpQ11,tmpQ12,tmpQ13,tmpQ14] = gGLCM(t,G,1,0,31);
 Q1=tmpQ1;
+% running gliding GLCM with dx=0 and dy=-1 and keeping Q12 and Q4
 [tmpQ1,tmpQ2,tmpQ3,tmpQ4,tmpQ11,tmpQ12,tmpQ13,tmpQ14] = gGLCM(t,G,0,-1,31);
 Q4=tmpQ4;
 Q12=tmpQ12;
 
 
-%test sets
+%test sets: keeping the same values from the 2 training sets
 [TMPt2Q1,TMPt2Q2,TMPt2Q3,TMPt2Q4,TMPt2Q11,TMPt2Q12,TMPt2Q13,TMPt2Q14] = gGLCM(t2,G,1,0,31);
 t2Q1=TMPt2Q1;
 [TMPt2Q1,TMPt2Q2,TMPt2Q3,TMPt2Q4,TMPt2Q11,TMPt2Q12,TMPt2Q13,TMPt2Q14] = gGLCM(t2,G,0,-1,31);
@@ -151,6 +143,7 @@ t3Q12=TMPt3Q12;
 
 
 %% oppgave 3
+% Print of the 3 Quadrants of the GLCM i used
 figure(6);clf
 imagesc(Q1)
 colormap jet
@@ -198,6 +191,7 @@ mask = reshape(tm, tmp1 * tmp2, 1);
 mysigma(1,:)=Q1(:);
 mysigma(2,:)=Q4(:);
 mysigma(3,:)=Q12(:);
+%filling sigma and my based on Q
 for c = 1:cl
     for i = 1:feature
         tmp(:, 1) = mysigma(i, :);
@@ -208,14 +202,14 @@ end
 
 
 
-
-
+%%my and sigma is used in all 3 runs under.
 %% Oppgave 5
 f_all(1,:,:) = Q1;
 f_all(2,:,:) = Q4;
 f_all(3,:,:) = Q12;
 [acc,outimg,confusion] = oppg7(f_all, my, sigma, cl, accl);
 
+ 
 figure(15);clf
 imagesc(outimg)
 title('Classefied img');
@@ -223,7 +217,7 @@ title('Classefied img');
 confusion
 acc
 
-%% oppg6.2
+%% oppg6.1
 
 
 f_all(1,:,:) = t2Q1;
@@ -240,7 +234,7 @@ confusion
 acc
 
 
-%% oppg6.1
+%% oppg6.2
 f_all(1,:,:) = t3Q1;
 f_all(2,:,:) = t3Q4;
 f_all(3,:,:) = t3Q12;

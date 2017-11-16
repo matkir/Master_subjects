@@ -64,8 +64,8 @@ tabsize=2}
     	\label{fig:o1_f1}%
 	\end{figure}
 
-	From this first texture we choose the first of the 4 images.\\
-	This corresponds to dx=0 dy=1  
+	From this first texture we choose the second of the 4 images.\\
+	This corresponds to dx=1 dy=0  
 \newpage
 
 	\begin{figure}[h]%
@@ -76,7 +76,7 @@ tabsize=2}
 	\end{figure}
 
 	From this first texture we choose the first of the 4 images.\\
-	This corresponds to dx=1 dy=0  
+	This corresponds to dx=0 dy=-1  
 
 	\begin{figure}[h]%
 		\centering
@@ -85,8 +85,8 @@ tabsize=2}
     	\label{fig:o1_f3}%
 	\end{figure}
 
-	From this first texture we choose the first of the 4 images.\\
-	This corresponds to dx=0 dy=-1  
+	From this first texture we choose the first or second of the 4 images.\\
+	This corresponds \textit{best} to dx=0 dy=-1  
 \newpage
 	\begin{figure}[h]%
 		\centering
@@ -140,7 +140,7 @@ As the Q1 quadrant has the most difference between the different textures, it is
 The Q matrices can now be analyzed: \\
 	\begin{figure}[h]%
 		\centering
-    	\subfloat[Texture 4]{{\includegraphics[width=12.5cm]{o3_q4.jpg} }}%
+    	\subfloat[Texture 4]{{\includegraphics[width=12.5cm]{o3_q1.jpg} }}%
     	\caption{Texture 4 GLCM}%
     	\label{fig:o1_f4}%
 	\end{figure}
@@ -154,48 +154,131 @@ The Q matrices can now be analyzed: \\
 
 	\begin{figure}[h]%
 		\centering
-    	\subfloat[Texture 4]{{\includegraphics[width=12.5cm]{o3_q4.jpg} }}%
+    	\subfloat[Texture 4]{{\includegraphics[width=12.5cm]{o3_q12.jpg} }}%
     	\caption{Texture 4 GLCM}%
     	\label{fig:o1_f4}%
 	\end{figure}
 
 
 Instead of showing all 8 sliding window GLCM matrices, I have chosen to only show the 3 that i used throughout the rest of the assignment.
-
+\newpage
 
 \section{Multivariate Gaussian Classifier}
 	After we got the GLCM matrix for the 3 different values, our next next task is to use a Multivariate Gaussian Classifier to try to classify the 4 patterns.\\
 		
 	The formula for Multivariate Gaussian Classifier (in multiple dimensions) is:
 	\begin{center}
-		$p ( x | \mu , \sum)=\frac{1}{(2\pi)^{\frac{d}{2}}}exp\left(-\frac{1}{2}(x-\mu)^T\sum^{-1}(x-\mu)\right)$
+		$y = f( x , \mu , \sum)=\frac{1}{\sqrt{|\sum|(2\pi)^{d}}}exp\left(-\frac{1}{2}(x-\mu)\sum^{-1}(x-\mu)'\right)$
 	\end{center}
-	
+\newpage
 \section{Classification}
-	this is clasification
-
+	this is classification
+\newpage
 \section{Testing}
 	this is testing
 	
 
-			
+	\subsection{The discarded result}
+	
+	Getting a good result varies a lot on the GLCM matrix that we chose early in the process.
+	This is a result that i chose to discard, where the GLCM matrices had different values than the one i ended up with.	
+	
+	\begin{figure}[h]
+	\centering
+	\begin{BVerbatim}
+confusion =
+       56294        1661        4562         513
+         378       58446         725          36
+        8353        5428       53798       15786
+           0           0        6450       49714
+acc =
+   83.2565
+
+confusion =
+       56610        2273        2883         522
+        1205       54745         267           0
+        7210        8517       56017       14861
+           0           0        6368       50666
+acc =
+   83.1749
+
+confusion =
+       39056       18547       15736        9122
+       12458       38550        3086       25138
+       13511        8438       46573       31637
+           0           0         140         152
+acc =
+   47.4285
+
+	\end{BVerbatim}
+	\caption{Result from a run with dx=0 dy=-1 and dx=1 dy=0}%
+	\label{verb:wrongGLCM}
+	\end{figure}
+	Here we have almost 50\% on the last test, which is higher than the one that i ended up with, but it failed to find any of the pattern from the bottom right corner. 
+	
+
+	
+	\subsection{The final result}
+
+	The final result yielded this result: 
+
+\begin{figure}[h]
+	\centering
+	\begin{BVerbatim}
+confusion =
+           0           0         255         255         513
+           0       59360        1594        1034        1070
+           0        4223       63678         317         724
+           0         140           8       60413         788
+           0        1302           0        3516       62954
+acc =
+   93.9960
+
+confusion =
+           0           0         255         255         513
+           0       58573        1866        5321	 	 857
+           0        4824       63374         401    	1024
+           0         415          24       54001    	2084
+           0        1213          16        5557   	   61571
+acc =
+   90.6063
+
+confusion =
+           0           0         255         255         513
+           0       55720       44913       15930        4903
+           0        8506       19448        5213       46792
+           0         357          32       38357         305
+           0         442         887        5780       13536
+acc =
+   48.4699
+	\end{BVerbatim}
+	\caption{Result from a run with dx=1 dy=0 and dx=0 dy=-1 (opposite of the other result) }%
+	\label{verb:rightGLCM}
+	\end{figure}
+	
 
 
 
+	\begin{figure}[h]%
+		\centering
+    	\subfloat[Texture 4]{{\includegraphics[width=12.5cm]{final_clas.jpg} }}%
+    	\caption{Final classification after training}%
+    	\label{fig:f0}%
+	\end{figure}
 
+	\begin{figure}[h]%
+		\centering
+    	\subfloat[Texture 4]{{\includegraphics[width=12.5cm]{final_t1.jpg} }}%
+    	\caption{Test classification on test number 1}%
+    	\label{fig:f1}%
+	\end{figure}
 
-
-
-
-
-
-
-
-
-
-
-
-
+	\begin{figure}[h]%
+		\centering
+    	\subfloat[Texture 4]{{\includegraphics[width=12.5cm]{final_t2.jpg} }}%
+    	\caption{Test classification on test number 2}%
+    	\label{fig:f2}%
+	\end{figure}
 
 
 

@@ -4,5 +4,10 @@
 \BOOKMARK [1][-]{section.3}{Multivariate Gaussian Classifier}{}% 4
 \BOOKMARK [1][-]{section.4}{Classification}{}% 5
 \BOOKMARK [1][-]{section.5}{Testing}{}% 6
-\BOOKMARK [2][-]{subsection.5.1}{The discarded result}{section.5}% 7
-\BOOKMARK [2][-]{subsection.5.2}{The final result}{section.5}% 8
+\BOOKMARK [2][-]{subsection.5.1}{The final result}{section.5}% 7
+\BOOKMARK [2][-]{subsection.5.2}{Training set}{section.5}% 8
+\BOOKMARK [2][-]{subsection.5.3}{Test set 1}{section.5}% 9
+\BOOKMARK [2][-]{subsection.5.4}{Test set 2}{section.5}% 10
+\BOOKMARK [1][-]{section.6}{appendix A - Gliding GLCM}{}% 11
+\BOOKMARK [1][-]{section.7}{appendix B - Main program}{}% 12
+\BOOKMARK [1][-]{section.8}{appendix C - Classifier}{}% 13

@@ -12,21 +12,9 @@ for c = 1:cl %for each class
     end
 end
 
+chance = MultivariateNormalDistribution  ./ cl; 
 
-
-totval = sum(MultivariateNormalDistribution);
-totval = reshape(totval,512,512);
-totval_array = zeros(cl,512,512);
-for c = 1:cl
-    totval_array(c, :, :) = totval;
-end
-
-
-chance = MultivariateNormalDistribution ./ totval_array ./ cl;
-
-
-
-filler = zeros(512,512);
+filler = zeros(512,512); %filler gets the val for the chanse it have at the current run of c
 outimg = zeros(512,512);
 for c = 1:cl
     for m = 1:512
@@ -43,6 +31,24 @@ end
 confusion = confusionmat(outimg(:), actual_matrix(:));  %make the confusionmatrix
 acc = sum(sum(diag(confusion)))/ sum(sum(confusion)) *100 ; %calc percent
 
+
+% used For PLOTTING DURING REPORT. INGNORE
+% figure();clf
+% imagesc(squeeze(chance(1,:,:)))
+% colormap hot
+% title(' probability of class 1');
+% figure();clf
+% imagesc(squeeze(chance(2,:,:)))
+% colormap hot
+% title(' probability of class 2');
+% figure();clf
+% imagesc(squeeze(chance(3,:,:)))
+% colormap hot
+% title(' probability of class 3');
+% figure();clf
+% imagesc(squeeze(chance(4,:,:)))
+% colormap hot
+% title(' probability of class 4');
 
 end
 

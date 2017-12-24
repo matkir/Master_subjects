@@ -1,0 +1,32 @@
+############
+#Constant f#
+############
+
+f(x)=2
+iterations=20000000
+eps=1e-10
+
+regular integral:
+21.06328109900005  seconds
+
+numba integral:
+0.5054326330000549  seconds
+41.6737656489975  speedup
+
+############
+##linear f##
+############
+
+f(x)=2x
+iterations=20000000
+eps=1e-10
+
+regular integral:
+23.409375574000023  seconds
+
+numba integral:
+0.3705256929997631  seconds
+63.17881867915429  speedup
+
+Numba is better than numpy with the fact that you dont have to change you code (ideally) 
+ You only need to add @jit

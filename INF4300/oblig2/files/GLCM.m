@@ -1,7 +1,7 @@
 function glcm = GLCM(img, G, dx, dy)
-% at this pont in the process this function was not 100% self-made.
-% Inspiration for Kristoffer Hoiseter, since he did the first
-% obligatory assignment in MATLAB, and I made my gliding window in python.
+%This function was not 100% self-made.
+% Inspiration for Kristoffer Hoiseter, and the weekly assignments, since i
+%made my gliding window in python.
 
 
 %size of image

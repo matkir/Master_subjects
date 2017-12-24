@@ -1,0 +1,31 @@
+N= 70000000
+
+numba integral of: 1/pi * sin(x)/x * 3*sin(x/3)/x * 5*sin(x/5)/x is:
+0.49999999999998895
+in  18.352390063999337  seconds
+
+
+numba integral of: 1/pi * sin(x)/x * 3*sin(x/3)/x * 5*sin(x/5)/x * 7*sin(x/7)/x is:
+0.5000000000000041
+in  24.5509633890033  seconds
+
+
+numba integral of: 1/pi * sin(x)/x * 3*sin(x/3)/x * 5*sin(x/5)/x * 7*sin(x/7)/x * 9*sin(x/9)/x * 11*sin(x/11)/x is:
+0.49999999999999944
+in  37.3911499570022  seconds
+
+
+numba integral of: 1/pi * sin(x)/x * 3*sin(x/3)/x * 5*sin(x/5)/x * 7*sin(x/7)/x * 9*sin(x/9)/x * 11*sin(x/11)/x * 13*sin(x/13)/x is:
+0.4999999999999993
+in  42.932842829002766  seconds
+
+
+numba integral of: 1/pi * sin(x)/x * 3*sin(x/3)/x * 5*sin(x/5)/x * 7*sin(x/7)/x * 9*sin(x/9)/x * 11*sin(x/11)/x * 13*sin(x/13)/x * 15*sin(x/15)/x is:
+0.49999999999264766
+in  49.60236645799887  seconds
+
+
+numba integral of: 1/pi * sin(x)/x * 3*sin(x/3)/x * 5*sin(x/5)/x * 7*sin(x/7)/x * 9*sin(x/9)/x * 9*sin(x/9)/x is:
+0.49999999999999956
+in  32.32344004899642  seconds
+

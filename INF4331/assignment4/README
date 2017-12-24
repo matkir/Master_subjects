@@ -1,0 +1,52 @@
+
+DISCRIPTION
+
+
+Contest.py
+	contest. Run to see the contest results
+
+
+
+
+cython_integrator.pyx
+	pyx file for the cython integrator. 
+	run:
+	$ python setup.py build_ext --inplace
+	to compile the code
+	
+
+
+integrate_module.py
+	module that can be inported by other programs
+
+
+Integrator.py
+	regular pythonic integration
+
+
+integrator_comparison.py
+	compares all the midpoint integration methods and saves the result in the reports folder
+
+numba_integrator.py
+	numba version of the integrator
+
+
+numpy_integrator.py
+	numpy version of the integrator
+	
+
+print_to_reports.py
+	makes the report files
+
+
+profiler.py
+	-Only for debugging-
+	profiler is not a part of the assignment
+	
+
+setup.py
+	run this to compile cython 
+
+
+test_integrator.py
+	tests all the different functions

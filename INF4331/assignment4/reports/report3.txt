@@ -1,0 +1,30 @@
+############
+#Constant f#
+############
+
+f(x)=2
+iterations=20000000
+eps=1e-10
+
+regular integral:
+21.06328109900005  seconds
+
+numpy integral:
+11.47447507700008  seconds
+1.8356640245112543  speedup
+
+############
+##linear f##
+############
+
+f(x)=2x
+iterations=20000000
+eps=1e-10
+
+regular integral:
+23.409375574000023  seconds
+
+numpy integral:
+0.6404421520001051  seconds
+36.551896999428266  speedup
+

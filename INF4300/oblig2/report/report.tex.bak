@@ -50,7 +50,9 @@ tabsize=2}
 \newpage
 
 \section{Texture description}
-	The first thing to do in this mandatory assignment was to find the best GLCM for all 4 of the textures. In the last assignment our job was to find these matrices, but this time we already have the finished glcm matrices.\\
+In this assignment our first task is to find the best gray level co
+occurrence matrix (GLCM) for the four textures given in the assignment description.
+In the previous assignment our task was to find these matrices, but this time we already have the finished GLCM matrices.\\
 	
 	With the finished GLCM matices, we can now get the feature images for the different orientations.\\
 	\begin{figure}[h]%
@@ -62,8 +64,7 @@ tabsize=2}
 \newpage
 \subsection{Matrix data}
 	Included in the assignment we got some matrices with the GLCM for each texture.
-	
-	
+	We want to find the GLCM matrices with the best pattern. Like strong points, or clear lines.\\
 	\begin{figure}[h!]%
 		\centering
     	\subfloat[Texture 1]{{\includegraphics[width=11.5cm]{o1_f1.jpg} }}%
@@ -71,7 +72,7 @@ tabsize=2}
     	\label{fig:o1_f1}%
 	\end{figure}
 
-	From this first texture we choose the second of the 4 images.\\
+	From this first texture we choose the first of the 4 images.\\
 	This corresponds to dx=1 dy=0  
 
 
@@ -82,7 +83,7 @@ tabsize=2}
     	\label{fig:o1_f2}%
 	\end{figure}
 
-	From this first texture we choose the first of the 4 images.\\
+	From this first texture we choose the second of the 4 images.\\
 	This corresponds to dx=0 dy=-1  
 \newpage
 	\begin{figure}[h!]%
@@ -92,8 +93,8 @@ tabsize=2}
     	\label{fig:o1_f3}%
 	\end{figure}
 
-	From this first texture we choose the first or second of the 4 images.\\
-	This corresponds \textit{best} to dx=0 dy=-1  
+	From this first texture we choose the first  of the 4 images.\\
+	This corresponds to dx=0 dy=-1  
 
 	\begin{figure}[h!]%
 		\centering
@@ -102,12 +103,12 @@ tabsize=2}
     	\label{fig:o1_f4}%
 	\end{figure}
 
-	From this first texture we choose the first of the 4 images.\\
-	This corresponds to dx=0 dy=-1
+	From this first texture we choose the first or second of the 4 images.\\
+	This corresponds \textit{best} to dx=0 dy=-1
 
 \vspace{10px}		
 	
-	Now that we have all the necessary dxy values, we can now start with the sliding GLCM part of the program. 
+	With all the necessary dxy values, we can start with the sliding GLCM part of the program.
 
 \newpage
 From this point onwards we stop using the GLCM matrices from the assignment, and start making and using our own:
@@ -117,7 +118,7 @@ An important note here is that the GLCM is going to be symmetric, so Q2 and Q3 w
 
 \newpage
 \section{Quadrant and sliding}
-	With the GLCM matrices from assignment 1 we can now divide the each of the GLCM matrices in to 4 parts: 
+	With the GLCM matrices from assignment 1 we can divide each of the GLCM matrices in to 4 parts: 
 
 	\begin{figure}[h]
 	\centering
@@ -138,10 +139,11 @@ GLCM Gliding window
 	\end{figure}
 
 
-When we now run the gliding GLCM the result of the different quadrants are stored in the respective variables. As shown in \ref{verb:gGLCM}.\\
+When we run the gliding GLCM the result of the different quadrants are stored in the respective variables. As shown in \ref{verb:gGLCM}.\\
 
-As the Q1 quadrant has the most difference between the different textures, it is natural to spit the quadrant up in to 4 subquadrants.
-The glidingGLCM can be found in appendix A \ref{fig:gGLCM}.
+Since the Q1 quadrant has the most varience of the different textures, it
+is natural to split the quadrant in to 4 subquadrants.
+The gliding GLCM can be found in appendix A \ref{fig:gGLCM}.
 
 
 
@@ -156,7 +158,8 @@ The Q matrices was then analyzed. And at this point we had to choose how many fe
     	\caption{Qadrant Q1 with dx=1 and dy=0}%
     	\label{fig:o3_q1}%
 	\end{figure}
-The first quadrant is the top left in the GLCM. As expected is the 2 textures with the most \' black \' to \' black \' pixels hot.   
+The first quadrant is the top left in the GLCM. As expected is the 2 textures
+with the most \textit{black}  to  \textit{black} pixels are \textit{hot}.   
 \newpage
 	\begin{figure}[h!]%
 		\centering
@@ -174,13 +177,13 @@ The second quadrant is almost the opposite, of the first. Here the GLCM jumps fr
 	\end{figure}
 The last quadrant is chosen mainly for the recognition of the bottom left texture.\\
 \vspace{10px}
-We now have 3 features to differentiate the textures. We can now work on the Multivariate Gaussian Classifier to train and recognize the textures. 
+We now have 3 features to differentiate the textures. We can work on the Multivariate Gaussian Classifier to train and recognize the textures. 
 
 
 \section{Multivariate Gaussian Classifier}	
-		After we got the GLCM matrix for the 3 different values, our next next task is to use a Multivariate Gaussian Classifier to try to classify the 4 patterns.\\
+		After we got the GLCM matrix for the 3 different values, our next task is to use a Multivariate Gaussian Classifier to try to classify the 4 patterns.\\
 	After the features was identified we ran it on the training mask to extract the $\mu$ and $\sigma$.\\
-	$\mu$ is the mean of the classes, and $\sigma$ us the covariance of all the features for all 4 classes.\\
+	$\mu$ is the mean of the classes, and $\sigma$ use the covariance of all the features for all 4 classes.\\
 	With these values we can calculate the Multivariate Gaussian Classifier.
 	The formula for Multivariate Gaussian Classifier (in multiple dimensions) is:
 	\begin{center}
@@ -255,6 +258,16 @@ acc =
 
 
 	\subsection{The final result}
+	The last part is to test the program on the 2 testing sets:
+	\begin{figure}[h!]%
+		\centering
+    	\subfloat[Test figure 2]{{\includegraphics[width=5.5cm]{test2.jpg} }}%
+    	\subfloat[Test figure 3]{{\includegraphics[width=5.5cm]{test3.jpg} }}%
+    	\caption{The two test figures}%
+    	\label{fig:test}%
+	\end{figure}
+	
+	We would expect the classifier to find the 4 classes pretty well on both the images, with the best result on figure 2, since it hasn't as much artifacts compared to test figure 3.\\ 
 	The dx/dy values with the chosen quadrants yielded the following result: 
 \begin{comment}
 \begin{figure}[h]
@@ -294,6 +307,7 @@ acc =
 	\end{comment}
 
 \newpage
+
 \subsection{Training set}
 	The training set gave us
 	\begin{figure}[h!]%
@@ -303,7 +317,8 @@ acc =
     	\label{fig:f0}%
 	\end{figure}
 	
-\begin{table}
+\vspace{10px}
+\begin{table}[h!]%
 \centering
 Confusion Matrix\\
 \begin{tabular}{c | c | c | c | c}
@@ -326,7 +341,7 @@ Confusion Matrix\\
     	\caption{Test classification on test number 1}%
     	\label{fig:f1}%
 	\end{figure}
-\begin{table}
+\begin{table}[h!]%
 \centering
 Confusion Matrix\\
 \begin{tabular}{c | c | c | c | c}
@@ -336,7 +351,7 @@ Confusion Matrix\\
  0  & 415   & 24    & 54001 & 2084  \\\hline
  0  & 1213  & 16    & 5557  & 61571 \\\hline
 \end{tabular}
-\caption {Accuracy: 90.6063}
+\caption {Accuracy: 90.6063\%}
 \end{table}
 
 	Here we got some trouble in class 3. Everything else is really close. Good enough result.
@@ -349,7 +364,7 @@ Confusion Matrix\\
     	\caption{Test classification on test number 2}%
     	\label{fig:f2}%
 	\end{figure}
-	\begin{table}
+	\begin{table}[h!]%
 \centering
 Confusion Matrix\\
 \begin{tabular}{c | c | c | c | c}

@@ -1,0 +1,30 @@
+############
+#Constant f#
+############
+
+f(x)=2
+iterations=20000000
+eps=1e-10
+
+regular integral:
+21.06328109900005  seconds
+
+cython integral:
+9.146471812000073  seconds
+2.302885914037941  speedup
+
+############
+##linear f##
+############
+
+f(x)=2x
+iterations=20000000
+eps=1e-10
+
+regular integral:
+23.409375574000023  seconds
+
+cython integral:
+14.174001885000052  seconds
+1.651571360292643  speedup
+

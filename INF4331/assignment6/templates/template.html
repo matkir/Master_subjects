@@ -1,0 +1,42 @@
+<html>
+<head>
+<link
+    href="http://cdn.pydata.org/bokeh/release/bokeh-0.12.5.min.css"
+    rel="stylesheet" type="text/css">
+<link
+    href="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.5.min.css"
+    rel="stylesheet" type="text/css">
+
+<script src="http://cdn.pydata.org/bokeh/release/bokeh-0.12.5.min.js"></script>
+<script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.5.min.js"></script>
+
+</head>
+<body>
+<H1>My awesome plot(s)</H1>
+
+<form action="/">
+<input type="text" name="tempfrom" placeholder="First year temperature"><br>
+<input type="text" name="tempto" placeholder="Last year temperature"><br>
+<input type="text" name="co2from" placeholder="First year co2"><br>
+<input type="text" name="co2to" placeholder="Last year co2"><br>
+<input type="text" name="cto" placeholder="Lower bound co2"><br>
+<input type="text" name="cfrom" placeholder="Upper bound co2"><br>
+<select name="month">
+	{% for feature in months %}
+		{% if feature == current_month %}
+			<option selected value="{{ feature }}">{{ feature }}</option> 
+		{% else %} 
+			<option value="{{ feature }}">{{ feature }}</option> 
+		{% endif %}
+	{% endfor %}
+</select>
+<input type="submit">
+</form>
+{{ script|safe }}
+{{ script2|safe }}
+{{ script3|safe }}
+{{ script4|safe }}
+
+
+</body>
+</html>

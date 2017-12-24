@@ -1,0 +1,20 @@
+############
+#midpoint f#
+############
+
+f(x)=sin(x)
+iterations=500000
+eps=1e-10
+
+midpoint regular integral:
+0.8223365070007276  seconds
+
+midpoint numpy integral:
+0.6267634629984968  seconds
+
+midpoint numba integral:
+0.5292304670001613  seconds
+
+midpoint cython integral:
+0.4842579520045547  seconds
+

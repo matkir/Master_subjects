@@ -78,9 +78,9 @@ class KNearestNeighbor(object):
     #                                     #
     #########################################################################
     
-    
-
-    pass
+    dists = np.sqrt(-2 * np.dot(X, self.X_train.T) +
+                    np.sum(self.X_train**2,axis=1) +
+                    np.sum(X**2,axis=1)[:, np.newaxis])
     
     
     #########################################################################
@@ -116,10 +116,16 @@ class KNearestNeighbor(object):
       # neighbors. Store these labels in closest_y.                           #
       # Hint: Look up the function numpy.argsort.                             #
       #########################################################################
-       
+      tmp = np.copy(dists[i,:])
+      closest_y =np.argsort(tmp)[:k]
+      a=self.y_train[closest_y]
+      a=np.bincount(a).argmax()
+      #counts = np.bincount(closest_y)
+      y_pred[i] =a #np.argmax(counts)
+   
       #closest_y = []
     
-      pass
+     
     
     
     
